@@ -1,0 +1,39 @@
+Planning
+
+press release
+work out what mvp is
+models
+wireframes
+
+
+Back End
+
+Set up models
+Set up routes
+set up controllers
+set up secure routes
+set up seeds
+
+
+Front End
+
+set up user authentication
+set up hotel authentication
+set up user login/logout/register
+set up hotel login/logout/register
+
+set up user pages
+set up user functionality
+
+set up hotel pages
+set up hotel functionality
+
+set up auction pages
+set up auction/bid functionality
+
+
+Styling
+
+set up basic styling
+pick fonts
+pick colour scheme - purple and yellow? purple and grey - red?
