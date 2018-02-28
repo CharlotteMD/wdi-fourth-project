@@ -10,6 +10,7 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 
 import AuctionsRoutes from './components/auctions/AuctionsRoutes';
+import HotelsRoutes from './components/hotels/HotelsRoutes';
 
 
 
@@ -25,6 +26,7 @@ class App extends React.Component {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <AuctionsRoutes />
+          <HotelsRoutes />
         </div>
       </Router>
     );
