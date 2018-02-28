@@ -67,39 +67,38 @@ const userData = [{
   passwordConfirmation: 'password'
 }];
 
-const hotelData =[{
-  name: 'The Dorchester Hotel',
-  image: 'https://exquisiteconcierge.co.uk/wp-content/uploads/2016/12/MG_6244-1.jpg',
-  website: 'https://www.dorchestercollection.com/en/london/the-dorchester/',
-  location: 'Mayfair',
-  amenities: [ 'Spa', 'Concierge', 'Family Friendly', 'Airport Shuffle', 'Free Parking', 'Bar', 'Restaurant' ],
-  stars: 5,
-  createdBy: globalUserData[6]
-},{
-  name: 'ANdAZ, London Liverpool Street',
-  image: 'https://exp.cdn-hotels.com/hotels/1000000/440000/431700/431650/707396a1_z.jpg',
-  website: 'https://londonliverpoolstreet.andaz.hyatt.com/en/hotel/home.html',
-  location: 'City of London',
-  amenities: [ 'Spa', 'Bar', 'Restaurant', 'Gym', 'Airport Shuffle', 'Free Parking', 'Free Wifi' ],
-  stars: 4,
-  createdBy: globalUserData[2]
-},{
-  name: 'ibis, London City',
-  image: 'https://exp.cdn-hotels.com/hotels/1000000/440000/431700/431650/707396a1_z.jpg',
-  website: 'https://exp.cdn-hotels.com/hotels/2000000/1210000/1200100/1200089/1200089_86_z.jpg',
-  location: 'City of London',
-  amenities: [ 'Free Wifi', 'Bar', 'Restaurant' ],
-  stars: 3,
-  createdBy: globalUserData[4]
-}];
-
-
 User
   .create(userData)
   .then(users => {
     globalUserData = users;
     console.log(`${users.length} users created! 👨‍👩‍👧‍👦`);
-    return Hotel.create(hotelData);
+    return Hotel.create([
+      {
+        name: 'The Dorchester Hotel',
+        image: 'https://exquisiteconcierge.co.uk/wp-content/uploads/2016/12/MG_6244-1.jpg',
+        website: 'https://www.dorchestercollection.com/en/london/the-dorchester/',
+        location: 'Mayfair',
+        amenities: [ 'Spa', 'Concierge', 'Family Friendly', 'Airport Shuffle', 'Free Parking', 'Bar', 'Restaurant' ],
+        stars: 5,
+        admin: globalUserData[6]
+      },{
+        name: 'ANdAZ, London Liverpool Street',
+        image: 'https://exp.cdn-hotels.com/hotels/1000000/440000/431700/431650/707396a1_z.jpg',
+        website: 'https://londonliverpoolstreet.andaz.hyatt.com/en/hotel/home.html',
+        location: 'City of London',
+        amenities: [ 'Spa', 'Bar', 'Restaurant', 'Gym', 'Airport Shuffle', 'Free Parking', 'Free Wifi' ],
+        stars: 4,
+        admin: globalUserData[2]
+      },{
+        name: 'ibis, London City',
+        image: 'https://exp.cdn-hotels.com/hotels/1000000/440000/431700/431650/707396a1_z.jpg',
+        website: 'https://exp.cdn-hotels.com/hotels/2000000/1210000/1200100/1200089/1200089_86_z.jpg',
+        location: 'City of London',
+        amenities: [ 'Free Wifi', 'Bar', 'Restaurant' ],
+        stars: 3,
+        admin: globalUserData[4]
+      }
+    ]);
   })
   .then(hotels => {
     console.log(`${hotels.length} hotel created! 🏩`);
@@ -179,7 +178,7 @@ User
             bid: 140
           }
         ]
-      },
+      }
     ]);
   })
   .then(auctions => {

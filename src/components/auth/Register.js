@@ -19,6 +19,8 @@ class Register extends React.Component {
   };
 
   handleUserChange = ({ target: { name, value }}) => {
+    console.log('working');
+    // this is not working!
     const user = Object.assign({}, this.state.user, { [name]: value });
     this.setState({ user });
   }
@@ -48,13 +50,16 @@ class Register extends React.Component {
 
   render() {
     return (
-      <RegisterForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        toggleHotelForm={this.toggleHotelForm}
-        showHotelForm={this.state.showHotelForm}
-      />
+      <div>
+        <h1>Register</h1>
+        <RegisterForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          toggleHotelForm={this.toggleHotelForm}
+          showHotelForm={this.state.showHotelForm}
+        />
+      </div>
     );
   }
 }

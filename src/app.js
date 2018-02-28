@@ -9,6 +9,10 @@ import Navbar from './components/utility/Navbar';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 
+import AuctionsRoutes from './components/auctions/AuctionsRoutes';
+
+
+
 
 class App extends React.Component {
 
@@ -17,9 +21,10 @@ class App extends React.Component {
       <Router>
         <div>
           <Navbar />
-          <h1>WDI Project 4</h1>
+          <h1>GetARoom</h1>
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <AuctionsRoutes />
         </div>
       </Router>
     );

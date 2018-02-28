@@ -3,6 +3,7 @@ import React from 'react';
 const RegisterForm = ({ handleUserChange, handleHotelChange, handleSubmit, user, toggleHotelForm, showHotelForm, hotel }) => {
   return (
     <form onSubmit={handleSubmit}>
+      
       <div className="form-group">
         <input
           type="text"

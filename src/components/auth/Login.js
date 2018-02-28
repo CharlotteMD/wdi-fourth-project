@@ -14,6 +14,7 @@ class userLogin extends React.Component {
   };
 
   handleChange = ({ target: { name, value } }) => {
+    console.log('working');
     const user = Object.assign({}, this.state.user, { [name]: value });
     this.setState({ user });
   }
@@ -31,11 +32,14 @@ class userLogin extends React.Component {
 
   render() {
     return (
-      <LoginForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
+      <div>
+        <h1>Login</h1>
+        <LoginForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </div>
     );
   }
 }
