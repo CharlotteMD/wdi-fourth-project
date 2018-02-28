@@ -40,9 +40,11 @@ class Register extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     Axios.post('/api/register', this.state.user)
+    // 504 error, this isnt returning quick enough 
       .then(res => {
         console.log('the response from the api', res);
         Auth.setToken(res.data.token);
+        Axios.post('/api/hotels/new', this.state.hotel);
         this.props.history.push('/');
       })
       .catch(err => console.log(err));
@@ -54,7 +56,8 @@ class Register extends React.Component {
         <h1>Register</h1>
         <RegisterForm
           user={this.state.user}
-          handleChange={this.handleChange}
+          hotel={this.state.hotel}
+          handleUserChange={this.handleUserChange}
           handleSubmit={this.handleSubmit}
           toggleHotelForm={this.toggleHotelForm}
           showHotelForm={this.state.showHotelForm}

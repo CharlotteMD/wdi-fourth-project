@@ -3,7 +3,7 @@ import React from 'react';
 const RegisterForm = ({ handleUserChange, handleHotelChange, handleSubmit, user, toggleHotelForm, showHotelForm, hotel }) => {
   return (
     <form onSubmit={handleSubmit}>
-      
+
       <div className="form-group">
         <input
           type="text"
@@ -11,6 +11,16 @@ const RegisterForm = ({ handleUserChange, handleHotelChange, handleSubmit, user,
           placeholder="Email"
           onChange={handleUserChange}
           value={user.email}
+          className="form-control"
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          onChange={handleUserChange}
+          value={user.name}
           className="form-control"
         />
       </div>
@@ -157,9 +167,9 @@ const RegisterForm = ({ handleUserChange, handleHotelChange, handleSubmit, user,
             </select>
           </div>
 
-          <button className="main-button">Register</button>
-
         </div>}
+
+      <button className="main-button">Register</button>
     </form>
   );
 };

@@ -127,7 +127,7 @@ User
       },{
         hotel: hotels[1],
         reservePrice: 300,
-        checkInDate: '09/04/2018',
+        checkInDate: '04/09/2018',
         nights: 1,
         maxGuests: 2,
         board: 'Bed and Breakfast',
@@ -151,7 +151,7 @@ User
       },{
         hotel: hotels[2],
         reservePrice: 50,
-        checkInDate: '21/05/2018',
+        checkInDate: '01/05/2018',
         nights: 2,
         maxGuests: 3,
         board: 'Bed only',

@@ -7,10 +7,10 @@ const auctions  = require('../controllers/auctions');
 const auth  = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
 
-router.route('/users/register')
+router.route('/register')
   .post(auth.register);
 
-router.route('/users/login')
+router.route('/login')
   .post(auth.login);
 
 router.route('/users/:id')
@@ -18,16 +18,13 @@ router.route('/users/:id')
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
 
-router.route('/hotels/register')
-  .post(auth.register);
-
-router.route('/hotels/login')
-  .post(auth.login);
-
 router.route('/hotels/:id')
   .get(hotels.show)
   .put(secureRoute, hotels.update)
   .delete(secureRoute, hotels.delete);
+
+router.route('/hotels/new')
+  .post(secureRoute, hotels.new);
 
 // router.route('/auctions/new')
 //   .post(secureRoute, auctions.new); // only hotels can create an auction
