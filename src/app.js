@@ -22,7 +22,7 @@ class App extends React.Component {
       <Router>
         <div>
           <Navbar />
-          <h1>GetARoom</h1>
+  
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <AuctionsRoutes />
