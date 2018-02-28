@@ -4,7 +4,19 @@ import Axios from 'axios';
 
 class AuctionsShow extends React.Component {
   state = {
-    auction: {}
+    auction: {
+      hotel: {
+        name: '',
+        image: ''},
+      reservePrice: '',
+      checkInDate: '',
+      nights: '',
+      maxGuests: '',
+      board: '',
+      details: ''
+      // bids: [ bidSchema ]
+
+    }
   }
 
   componentDidMount() {
@@ -21,8 +33,10 @@ class AuctionsShow extends React.Component {
 
           <ul>
 
+            <h2>{this.state.auction.hotel._id}</h2>
+
             <a href={`/hotels/${this.state.auction.hotel}`}>
-              <h2>{this.state.auction.hotel}</h2>
+              <h2>{this.state.auction.hotel.name}</h2>
             </a>
 
             <li>
