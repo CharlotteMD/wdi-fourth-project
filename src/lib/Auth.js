@@ -22,17 +22,17 @@ class Auth {
     return JSON.parse(atob(token.split('.')[1]));
   }
 
-  static getUserId() {
-    if(this.isAuthenticated()) {
-      return this.getToken().userId;
-    }
-  }
-
-  static getHotelId() {
-    if(this.isAuthenticated()) {
-      return this.getToken().hotelId;
-    }
-  }
+  // static getUserId() {
+  //   if(this.isAuthenticated()) {
+  //     return this.getToken().userId;
+  //   }
+  // }
+  //
+  // static getHotelId() {
+  //   if(this.isAuthenticated()) {
+  //     return this.getToken().hotelId;
+  //   }
+  // }
 
 
 }

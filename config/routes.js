@@ -3,41 +3,39 @@ const router = require('express').Router();
 const users  = require('../controllers/users');
 const hotels  = require('../controllers/hotels');
 const auctions  = require('../controllers/auctions');
-const hotelAuth  = require('../controllers/hotel-auth');
-const userAuth  = require('../controllers/user-auth');
 
-const userSecureRoute = require('../lib/userSecureRoute');
-const hotelSecureRoute = require('../lib/hotelSecureRoute');
+const auth  = require('../controllers/auth');
+const secureRoute = require('../lib/secureRoute');
 
 router.route('/users/register')
-  .post(userAuth.register);
+  .post(auth.register);
 
 router.route('/users/login')
-  .post(userAuth.login);
+  .post(auth.login);
 
 router.route('/users/:id')
-  .get(userSecureRoute, users.show)
-  .put(userSecureRoute, users.update)
-  .delete(userSecureRoute, users.delete);
+  .get(secureRoute, users.show)
+  .put(secureRoute, users.update)
+  .delete(secureRoute, users.delete);
 
 router.route('/hotels/register')
-  .post(hotelAuth.register);
+  .post(auth.register);
 
 router.route('/hotels/login')
-  .post(hotelAuth.login);
+  .post(auth.login);
 
 router.route('/hotels/:id')
   .get(hotels.show)
-  .put(hotelSecureRoute, hotels.update)
-  .delete(hotelSecureRoute, hotels.delete);
+  .put(secureRoute, hotels.update)
+  .delete(secureRoute, hotels.delete);
 
 // router.route('/auctions/new')
-//   .post(hotelSecureRoute, auctions.new); // only hotels can create an auction
+//   .post(secureRoute, auctions.new); // only hotels can create an auction
 
 router.route('/auctions/:id')
   .get(auctions.show)
   // .put(secureRoute, auctions.update) cant edit an auction once its started
-  .delete(hotelSecureRoute, auctions.delete);
+  .delete(secureRoute, auctions.delete);
 
 // router.route('/auctions/:id/edit')
 // .get(secureRoute, auctions.edit); cant edit an auction once its started
@@ -47,7 +45,7 @@ router.route('/auctions')
 
 
 // router.route('/auctions/:id/bids/new')
-//   .post(userSecureRoute, auctions.new.bids); // only users can bid
+//   .post(secureRoute, auctions.new.bids); // only users can bid
 
 // router.route('/auctions/:id/bid/:id')
 //   .get(auctions.show.bids); // only user who owns bid can see it, everyone else can only see highest bid

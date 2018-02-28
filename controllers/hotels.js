@@ -1,16 +1,15 @@
 const Hotel = require('../models/hotel');
 
-// function hotelsIndex(req, res, next) {
-//   Hotel
-//     .find()
-//     .exec()
-//     .then(hotels => res.json(hotels))
-//     .catch(next);
-// }
+function hotelsIndex(req, res, next) {
+  Hotel
+    .find()
+    .exec()
+    .then(hotels => res.json(hotels))
+    .catch(next);
+}
 
 function hotelsCreate(req, res, next) {
-
-  if(req.file) req.body.image = req.file.filename;
+  req.body.admin = req.currentUser;
 
   Hotel
     .create(req.body)

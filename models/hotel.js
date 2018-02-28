@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const hotelSchema = new mongoose.Schema({
-  hotelName: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
+  name: { type: String, required: true, unique: true },
   image: { type: String, required: true },
   website: { type: String, required: true, unique: true },
   location: { type: String, required: true },
   amenities: [{ type: String }],
+  admin: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   stars: Number
 });
 
