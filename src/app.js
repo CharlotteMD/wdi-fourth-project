@@ -2,6 +2,7 @@ import React    from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import 'bootstrap-css-only';
 import './scss/style.scss';
 
 import Navbar from './components/utility/Navbar';
