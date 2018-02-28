@@ -44,7 +44,7 @@ class AuctionsIndex extends Component {
                             </li>
 
                             <Link to={`/auctions/${auctions.id}`}>
-                              <button>View</button>
+                              <button>More Info</button>
                             </Link>
 
                           </ul>
