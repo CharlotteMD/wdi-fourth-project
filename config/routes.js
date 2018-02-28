@@ -24,7 +24,7 @@ router.route('/hotels/:id')
   .delete(secureRoute, hotels.delete);
 
 router.route('/hotels/new')
-  .post(secureRoute, hotels.new);
+  .post(secureRoute, hotels.create);
 
 // router.route('/auctions/new')
 //   .post(secureRoute, auctions.new); // only hotels can create an auction

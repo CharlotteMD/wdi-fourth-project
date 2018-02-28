@@ -1,12 +1,12 @@
 const Hotel = require('../models/hotel');
 
-function hotelsIndex(req, res, next) {
-  Hotel
-    .find()
-    .exec()
-    .then(hotels => res.json(hotels))
-    .catch(next);
-}
+// function hotelsIndex(req, res, next) {
+//   Hotel
+//     .find()
+//     .exec()
+//     .then(hotels => res.json(hotels))
+//     .catch(next);
+// }
 
 function hotelsCreate(req, res, next) {
   req.body.admin = req.currentUser;
