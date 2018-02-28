@@ -46,7 +46,7 @@ const RegisterForm = ({ handleUserChange, handleHotelChange, handleSubmit, user,
       </div>
 
       <div className="form-group">
-        <select onChange={toggleHotelForm}>
+        <select onChange={toggleHotelForm} value="">
           <option value="client">Client</option>
           <option value="hotel">Hotel</option>
         </select>

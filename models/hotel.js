@@ -6,7 +6,7 @@ const hotelSchema = new mongoose.Schema({
   image: { type: String, required: true },
   website: { type: String, required: true, unique: true },
   location: { type: String, required: true },
-  amenities: [{ type: String }],
+  amenities: { type: String },
   admin: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   stars: Number
 });
