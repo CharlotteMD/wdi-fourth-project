@@ -7,6 +7,7 @@ import './scss/style.scss';
 
 import Navbar from './components/utility/Navbar';
 import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Navbar />
           <h1>WDI Project 4</h1>
           <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
         </div>
       </Router>
     );
