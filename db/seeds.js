@@ -1,8 +1,8 @@
 const mongoose   = require('mongoose');
-const { dbURI } = require('../config/environment');
+const { db, env } = require('../config/environment');
 
 mongoose.Promise = require('bluebird');
-mongoose.connect(dbURI);
+mongoose.connect(db[env]);
 
 const User = require('../models/user');
 const Hotel = require('../models/hotel');
@@ -69,8 +69,9 @@ const userData = [{
 
 const hotelData =[{
   hotelName: 'The Dorchester Hotel',
-  contactEmail: 'hello@thedorchester.com',
-  hotelPassword: 'password',
+  email: 'hello@thedorchester.com',
+  password: 'password',
+  passwordConfirmation: 'password',
   image: 'https://exquisiteconcierge.co.uk/wp-content/uploads/2016/12/MG_6244-1.jpg',
   website: 'https://www.dorchestercollection.com/en/london/the-dorchester/',
   location: 'Mayfair',
@@ -78,8 +79,9 @@ const hotelData =[{
   stars: 5
 },{
   hotelName: 'ANdAZ, London Liverpool Street',
-  contactEmail: 'hello@hyatt.com',
-  hotelPassword: 'password',
+  email: 'hello@hyatt.com',
+  password: 'password',
+  passwordConfirmation: 'password',
   image: 'https://exp.cdn-hotels.com/hotels/1000000/440000/431700/431650/707396a1_z.jpg',
   website: 'https://londonliverpoolstreet.andaz.hyatt.com/en/hotel/home.html',
   location: 'City of London',
@@ -87,8 +89,9 @@ const hotelData =[{
   stars: 4
 },{
   hotelName: 'ibis, London City',
-  contactEmail: 'hello@accor.com',
-  hotelPassword: 'password',
+  email: 'hello@accor.com',
+  password: 'password',
+  passwordConfirmation: 'password',
   image: 'https://exp.cdn-hotels.com/hotels/1000000/440000/431700/431650/707396a1_z.jpg',
   website: 'https://exp.cdn-hotels.com/hotels/2000000/1210000/1200100/1200089/1200089_86_z.jpg',
   location: 'City of London',

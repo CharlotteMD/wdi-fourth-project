@@ -2,22 +2,22 @@ Planning
 
 press release
 work out what mvp is
-models
+TICK models
 wireframes
 
 
 Back End
 
-Set up models
-Set up routes
-set up controllers
+TICK Set up models
+TICK Set up routes
+TICK set up controllers
 set up secure routes
 set up seeds
 
 
 Front End
 
-set up user authentication
+TICK set up user authentication
 set up hotel authentication
 set up user login/logout/register
 set up hotel login/logout/register

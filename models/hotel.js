@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 
 const hotelSchema = new mongoose.Schema({
   hotelName: { type: String, required: true, unique: true },
-  contactEmail: { type: String, required: true, unique: true },
-  hotelPassword: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
   image: { type: String, required: true },
   website: { type: String, required: true, unique: true },
   location: { type: String, required: true },

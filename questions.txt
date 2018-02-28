@@ -1,0 +1,7 @@
+1 seeds have url error
+
+2 how can you use one login form for hotels & users
+
+3 how do you set up the navbar so only hotels/users can login
+
+4 
