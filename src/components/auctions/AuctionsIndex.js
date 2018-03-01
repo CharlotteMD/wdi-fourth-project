@@ -59,6 +59,7 @@ class AuctionsIndex extends Component {
                               <img src={auction.hotel.image} alt={auction.hotel.name} >
                               </img>
                             </li>
+                            {' '}
                             <li>
                               From: {moment(auction.checkInDate).format('do MMMM, YYYY')}, for {auction.nights} nights
                             </li>
@@ -71,7 +72,7 @@ class AuctionsIndex extends Component {
 
                             <div className="showlink">
                               <Link to={`/auctions/${auction.id}`}>
-                                More Info
+                                <button>View</button>
                               </Link>
                             </div>
 

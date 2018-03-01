@@ -1,8 +1,9 @@
 $header-color: #4A04A3;
-$subhead-color: #7F7979; //could be a bold blue
+$subhead-color: #7F7979;
 $text-color: #393D3F;
 $emph-color: #FFD151;
 $background-color: #F1FFFA;
+$light-color: lighten( $header-color, 30% );
 
 
 $head-font: 'Heebo', sans-serif;
