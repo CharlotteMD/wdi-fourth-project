@@ -6,13 +6,13 @@ import moment from 'moment';
 class AuctionsIndex extends Component {
       state = {
         auctions: [{
-          hotel: [{
+          hotel: {
             name: '',
             image: '',
             location: '',
             amenities: '',
             stars: ''
-          }],
+          },
           reservePrice: '',
           checkInDate: '',
           nights: '',
@@ -44,36 +44,40 @@ class AuctionsIndex extends Component {
               <div className="container">
                 <div className="row">
 
-                  { this.state.auctions.map(auctions =>
-                    <div key={auctions.id} >
+                  { this.state.auctions.map((auction, i) => {
+                    return <div key={i}>
                       <div className="col-sm">
                         <div className="card">
 
                           <ul>
                             <li>
-                              <a href={`hotels/${auctions.hotel._id}`}>
-                                <h3>{auctions.hotel.name}</h3>
+                              <a href={`hotels/${auction.hotel._id}`}>
+                                <h3>{auction.hotel.name}</h3>
                               </a>
                             </li>
                             <li>
-                              From: {moment(auctions.checkInDate).format('do MMMM, YYYY')}, for {auctions.nights} nights
+                              <img src={auction.hotel.image} alt={auction.hotel.name} >
+                              </img>
                             </li>
                             <li>
-                              Reserve Price: £{auctions.reservePrice}
+                              From: {moment(auction.checkInDate).format('do MMMM, YYYY')}, for {auction.nights} nights
                             </li>
                             <li>
-                              {auctions.maxGuests} Guests
+                              Reserve Price: £{auction.reservePrice}
+                            </li>
+                            <li>
+                              {auction.maxGuests} Guests
                             </li>
 
-                            <Link to={`/auctions/${auctions.id}`}>
-                              <button>More Info</button>
+                            <Link to={`/auctions/${auction.id}`}>
+                              More Info
                             </Link>
 
                           </ul>
                         </div>
                       </div>
-                    </div>
-                  )}
+                    </div>;
+                  })}
 
 
                 </div>

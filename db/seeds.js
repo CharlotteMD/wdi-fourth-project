@@ -75,7 +75,7 @@ User
     return Hotel.create([
       {
         name: 'The Dorchester Hotel',
-        image: 'https://exquisiteconcierge.co.uk/wp-content/uploads/2016/12/MG_6244-1.jpg',
+        image: 'https://www.dorchestercollection.com/wp-content/uploads/london-the-dorchester-the-promenade-full-room-green-chairs_landscape-1600x900.jpg',
         website: 'https://www.dorchestercollection.com/en/london/the-dorchester/',
         location: 'Mayfair',
         amenities: [ 'Spa', 'Concierge', 'Family Friendly', 'Airport Shuffle', 'Free Parking', 'Bar', 'Restaurant' ],
@@ -83,7 +83,7 @@ User
         admin: globalUserData[6]
       },{
         name: 'ANdAZ, London Liverpool Street',
-        image: 'https://exp.cdn-hotels.com/hotels/1000000/440000/431700/431650/707396a1_z.jpg',
+        image: 'https://media-cdn.tripadvisor.com/media/photo-s/12/0f/50/6b/andaz-london-liverpool.jpg',
         website: 'https://londonliverpoolstreet.andaz.hyatt.com/en/hotel/home.html',
         location: 'City of London',
         amenities: [ 'Spa', 'Bar', 'Restaurant', 'Gym', 'Airport Shuffle', 'Free Parking', 'Free Wifi' ],
@@ -91,7 +91,7 @@ User
         admin: globalUserData[2]
       },{
         name: 'ibis, London City',
-        image: 'https://exp.cdn-hotels.com/hotels/1000000/440000/431700/431650/707396a1_z.jpg',
+        image: 'https://s-ec.bstatic.com/images/hotel/max1024x768/975/97514031.jpg',
         website: 'https://exp.cdn-hotels.com/hotels/2000000/1210000/1200100/1200089/1200089_86_z.jpg',
         location: 'City of London',
         amenities: [ 'Free Wifi', 'Bar', 'Restaurant' ],
