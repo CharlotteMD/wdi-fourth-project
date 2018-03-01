@@ -10,6 +10,7 @@ import AuctionsIndex from '../../../src/components/auctions/AuctionsIndex';
 
 const auctionData = [
   {
+    '_id': '1',
     'bids': [],
     'hotel': {
       '_id': '5a980b8da7d9ecf50b1da552',
@@ -33,6 +34,7 @@ const auctionData = [
     'id': '5a980b8da7d9ecf50b1da555'
   },
   {
+    '_id': '1',
     'bids': [],
     'hotel': {
       '_id': '5a980b8da7d9ecf50b1da553',
@@ -82,10 +84,20 @@ describe('Auctions Index tests', () => {
     done();
   });
 
-  it('should display auction', done => {
+  it('should display auctions', done => {
     promise.then(() => {
       wrapper.update();
       expect(wrapper.find('div.col-sm').length).to.eq(2);
+      done();
+    });
+  });
+
+  it('should display links to show pages', done => {
+    promise.then(() => {
+      wrapper.update();
+      expect(wrapper.find('div.showlink').length).to.eq(2);
+      // expect(wrapper.find({ href: '/auctions/_1' }).length).to.eq(1);
+      // expect(wrapper.find({ href: '/auctions/_2' }).length).to.eq(1);
       done();
     });
   });

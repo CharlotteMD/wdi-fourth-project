@@ -69,9 +69,11 @@ class AuctionsIndex extends Component {
                               {auction.maxGuests} Guests
                             </li>
 
-                            <Link to={`/auctions/${auction.id}`}>
-                              More Info
-                            </Link>
+                            <div className="showlink">
+                              <Link to={`/auctions/${auction.id}`}>
+                                More Info
+                              </Link>
+                            </div>
 
                           </ul>
                         </div>
