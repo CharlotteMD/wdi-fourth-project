@@ -4,7 +4,14 @@ import Axios from 'axios';
 
 class HotelsShow extends React.Component {
   state = {
-    hotel: {}
+    hotel: {
+      name: '',
+      image: '',
+      location: '',
+      info: '',
+      amenities: [''],
+      stars: ''
+    }
   }
 
   componentDidMount() {
@@ -16,23 +23,30 @@ class HotelsShow extends React.Component {
 
   render() {
     return(
+
       <div className="hotel-show">
-        <div className="row">
+
+        <h2>{this.state.hotel.name}</h2>
+        <h3>{this.state.hotel.location}</h3>
+        <h3>{this.state.hotel.stars}⭐️</h3>
 
 
+        <img src={this.state.hotel.image}/>
 
-          <h2>{this.state.hotel.name}</h2>
-          <h3>{this.state.hotel.location}</h3>
-          <h3>{this.state.hotel.stars}⭐️</h3>
+        <p className="info">{this.state.hotel.info}</p>
 
+        <p>{this.state.hotel.amenities}</p>
 
-          <img src="{this.state.hotel.image}" />
+        {/* { this.state.hotels.map((hotel, i) => {
+          return <div key={i}>
+            <ul>
+              <li><p>{hotel.amenities}</p></li>
+            </ul>
+          </div>;
+        })} */}
 
-          <p>{this.state.hotel.amenities}</p>
-
-
-        </div>
       </div>
+
     );
   }
 }

@@ -1,20 +1,21 @@
-
-
-.card {
+.hotel-show {
   text-align: center;
-  // background-color: $light-color;
+  justify-content: center;
+  background-color: $light-color;
   flex-wrap: wrap;
   border: solid $emph-color 5px;
   border-radius: 5%;
-  width: 300px;
-  height: 320px;
+  width: 700px;
+  height: auto;
   padding: 5px;
   margin: 20px 10px 0px 10px;
+  box-shadow: 10px 10px 5px $header-color;
 
   img {
     width: 90%;
-    height: 100px;
+    height: 500px;
     border-radius: 5%;
+    border: $light-color solid 2px;
 
   }
 
@@ -23,11 +24,16 @@
     font-size: 20px;
     font-weight: 900;
     font-family: $text-font;
-
-
   }
 
-    box-shadow: 10px 10px 5px $header-color;
+  .info {
+    background-color: white;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 3%;
+  }
+
+
 
   ul {
     list-style: none;

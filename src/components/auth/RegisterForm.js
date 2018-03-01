@@ -125,6 +125,17 @@ const RegisterForm = ({ handleUserChange, handleHotelChange, handleSubmit, user,
             </div>
 
             <div className="form-group">
+              <input
+                type="text"
+                name="info"
+                placeholder="Summary of your hotel"
+                onChange={handleHotelChange}
+                value={hotel.info}
+                className="form-control"
+              />
+            </div>
+
+            <div className="form-group">
               <label htmlFor="amenities">Amenities</label>
               <select
                 className="form-control"

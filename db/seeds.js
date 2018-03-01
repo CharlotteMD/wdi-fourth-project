@@ -78,6 +78,7 @@ User
         image: 'https://www.dorchestercollection.com/wp-content/uploads/london-the-dorchester-the-promenade-full-room-green-chairs_landscape-1600x900.jpg',
         website: 'https://www.dorchestercollection.com/en/london/the-dorchester/',
         location: 'Mayfair',
+        info: 'Discover true luxury at The Dorchester Hotel, one of London\'s most iconic 5-star hotels. Choose from our exquisite range of luxury rooms and suites.',
         amenities: [ 'Spa', 'Concierge', 'Family Friendly', 'Airport Shuffle', 'Free Parking', 'Bar', 'Restaurant' ],
         stars: 5,
         admin: globalUserData[6]
@@ -86,6 +87,7 @@ User
         image: 'https://media-cdn.tripadvisor.com/media/photo-s/12/0f/50/6b/andaz-london-liverpool.jpg',
         website: 'https://londonliverpoolstreet.andaz.hyatt.com/en/hotel/home.html',
         location: 'City of London',
+        info: 'Located in the heart of vibrant East London, Andaz London Liverpool Street hotel lends itself as the perfect location for leisure and business guests alike. Opened as the Great Eastern Hotel in 1884 and one of London’s original railway hotels, the Andaz is housed in a beautiful redbrick Victorian building designed by the architects of London’s famed Houses of Parliament.',
         amenities: [ 'Spa', 'Bar', 'Restaurant', 'Gym', 'Airport Shuffle', 'Free Parking', 'Free Wifi' ],
         stars: 4,
         admin: globalUserData[2]
@@ -94,6 +96,7 @@ User
         image: 'https://s-ec.bstatic.com/images/hotel/max1024x768/975/97514031.jpg',
         website: 'https://exp.cdn-hotels.com/hotels/2000000/1210000/1200100/1200089/1200089_86_z.jpg',
         location: 'City of London',
+        info: 'Just 20 yards from Aldgate East London Underground Station, ibis London City - Shoreditch has modern, air-cooled rooms. Liverpool Street Station is a 10-minute walk away.In the heart of The City, the ibis London City - Shoreditch is a 15-minute walk from St Paul’s Cathedral. Vibrant South Bank, with Tate Modern and Shakespeare’s Globe, is a 20-minute walk away.',
         amenities: [ 'Free Wifi', 'Bar', 'Restaurant' ],
         stars: 3,
         admin: globalUserData[4]

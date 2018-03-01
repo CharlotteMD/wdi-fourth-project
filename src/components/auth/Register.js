@@ -18,6 +18,7 @@ class Register extends React.Component {
       image: '',
       website: '',
       location: '',
+      info: '',
       amenities: '',
       stars: ''
     },
