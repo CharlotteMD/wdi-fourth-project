@@ -33,9 +33,9 @@ class AuctionsShow extends React.Component {
 
           <ul>
 
-            <h2>{this.state.auction.hotel._id}</h2>
 
-            <a href={`/hotels/${this.state.auction.hotel}`}>
+
+            <a href={`/hotels/${this.state.auction.hotel._id}`}>
               <h2>{this.state.auction.hotel.name}</h2>
             </a>
 

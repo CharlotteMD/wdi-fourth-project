@@ -4,8 +4,29 @@ import { Link } from 'react-router-dom';
 
 class AuctionsIndex extends Component {
       state = {
-        auctions: []
+        auctions: [{
+          hotel: [{
+            name: '',
+            image: '',
+            location: '',
+            amenities: '',
+            stars: ''
+          }],
+          reservePrice: '',
+          checkInDate: '',
+          nights: '',
+          maxGuests: '',
+          board: '',
+          details: '',
+          bids: [{
+            createdBy: {
+              name: ''
+            },
+            bid: ''
+          }]
+        }]
       }
+
 
       componentDidMount() {
         Axios
@@ -29,8 +50,8 @@ class AuctionsIndex extends Component {
 
                           <ul>
                             <li>
-                              <a href={`hotels/${auctions.hotel}`}>
-                                <h3>{auctions.hotel}</h3>
+                              <a href={`hotels/${auctions.hotel._id}`}>
+                                <h3>{auctions.hotel.name}</h3>
                               </a>
                             </li>
                             <li>

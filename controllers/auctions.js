@@ -3,6 +3,7 @@ const Auction = require('../models/auction');
 function auctionsIndex(req, res, next) {
   Auction
     .find()
+    .populate('hotel')
     .exec()
     .then(auctions => res.json(auctions))
     .catch(next);
@@ -21,6 +22,7 @@ function auctionsCreate(req, res, next) {
 function auctionsShow(req, res, next) {
   Auction
     .findById(req.params.id)
+    .populate('hotel')
     .exec()
     .then((auction) => {
       if(!auction) return res.notFound();

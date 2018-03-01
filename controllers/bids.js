@@ -21,6 +21,7 @@ function bidsCreate(req, res, next) {
 function bidsShow(req, res, next) {
   Auction
     .findById(req.params.id)
+    .populate('hotel')
     .exec()
     .then((user) => {
       if(!user) return res.notFound();

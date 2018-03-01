@@ -21,9 +21,11 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Navbar />
-          <Link to="/"><h1>GetARoom.com</h1></Link>
-          <h2>Pay what you want for the best hotels in London</h2>
+          <header>
+            <Navbar />
+            <Link to="/"><h1>GetARoom.com</h1></Link>
+            <h2>Pay what you want for the best hotels in London</h2>
+          </header>
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
