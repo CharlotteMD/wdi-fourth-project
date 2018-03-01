@@ -21,11 +21,19 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <header>
-            <Navbar />
-            <Link to="/"><h1>GetARoom.com</h1></Link>
-            <h2>Pay what you want for the best hotels in London</h2>
-          </header>
+          <div className="title">
+
+            <header>
+              <Navbar />
+              {/* <Link to="/"><h1>GetARoom.com</h1></Link> */}
+              {/* <h2>Pay what you want for the best hotels in London</h2> */}
+
+            </header>
+
+            <a className="app-nav" href="/auctions">View Current Auctions</a>
+
+          </div>
+
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />

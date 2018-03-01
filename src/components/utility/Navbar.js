@@ -14,34 +14,35 @@ const Navbar = ({ history }) => {
 
   return(
     <nav >
+      <div className="navbar">
+        <ul>
 
-      <ul className="navbar-nav">
 
-        { !Auth.isAuthenticated() &&
+          { !Auth.isAuthenticated() &&
           <li className="nav-item">
-            <a className="dropdown-item" href="/register">Register</a>
+            <a className="nav-link" href="/register">Register</a>
           </li>}
 
-        { !Auth.isAuthenticated() &&
-            <li className="nav-item">
-              <a className="dropdown-item" href="/login">Login</a>
-            </li>}
+          { !Auth.isAuthenticated() &&
+          <li className="nav-item">
+            <a className="nav-link" href="/login">Login</a>
+          </li>}
 
-        {Auth.isAuthenticated() &&
-              <li className="nav-item">
-                <a className="nav-link" href={`/users/${Auth.getPayload().userId}`}>Your Profile</a>
-              </li>}
+          {Auth.isAuthenticated() &&
+          <li className="nav-item">
+            <a className="nav-link" href={`/users/${Auth.getPayload().userId}`}>Your Profile</a>
+          </li>}
 
-        {Auth.isAuthenticated() &&
-                <li className="nav-item">
-                  <a href="/" className="standard-button" onClick={logout}>Logout</a>
-                </li>}
+          {Auth.isAuthenticated() &&
+          <li className="nav-item">
+            <a href="/" className="nav-link" onClick={logout}>Logout</a>
+          </li>}
 
-        <li className="nav-item">
-          <a className="nav-link" href="/auctions">View Current Auctions</a>
-        </li>
+          
 
-      </ul>
+        </ul>
+
+      </div>
 
     </nav>
 

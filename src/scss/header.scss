@@ -1,0 +1,50 @@
+.title {
+
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $header-color;
+
+    a:hover {
+      background-color: $emph-color;
+    }
+  }
+
+  .app-nav {
+
+    margin-top: -50px;
+    margin-bottom: 10px;
+  }
+  header {
+    background-image: url('/assets/images/GetARoom.png');
+    // padding-top: 300px;
+    // padding-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    // border-radius: 15%;
+    height: 200px;
+    margin-top: -30px;
+
+    .navbar {
+      margin-top: 30px;
+
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+
+
+          li {
+            float: left;
+            text-align: center;
+
+
+
+        	}
+  	    }
+      }
+    }
+  }

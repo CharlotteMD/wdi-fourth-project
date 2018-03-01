@@ -1,6 +1,7 @@
 @import "variables";
 @import "auction-index";
 @import "card";
+@import "header";
 
 body {
   font-family: $text-font;
@@ -13,6 +14,20 @@ h1, h2 {
   font-family: $head-font;
 }
 
+h1 {
+  color: $emph-color;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 80px;
+  // padding: 50px;
+  // padding-bottom: 30px;
+}
+
+h2 {
+  color: $header-color;
+  padding: 10px;
+}
+
 .row {
   display: flex;
 }
@@ -21,34 +36,7 @@ h3 {
   text-decoration: underline;
 }
 
-header {
-  // background-image: url("../assets/images/GetARoom.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 15%;
 
-  h1 {
-    color: $emph-color;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 80px;
-    padding: 50px;
-    padding-bottom: 30px;
-  }
-
-  h2 {
-    color: $header-color;
-    padding: 10px;
-  }
-
-  .standard-button {
-      font-size: 30px;
-      padding: 5px;
-
-  }
-
-}
 
 
 .offer-show {
