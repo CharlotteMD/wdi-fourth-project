@@ -15,6 +15,7 @@
     width: 90%;
     height: 100px;
     border-radius: 5%;
+    border: $light-color solid 2px;
 
   }
 
@@ -44,8 +45,15 @@
     padding: 10px;
     border-radius: 25%;
     border: none;
+    color: $emph-color;
+  }
 
-
+  button:hover {
+    background-color: $emph-color;
+    padding: 10px;
+    border-radius: 25%;
+    border: none;
+    color: $light-color;
   }
 
 }
