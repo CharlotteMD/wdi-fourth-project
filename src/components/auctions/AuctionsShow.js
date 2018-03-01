@@ -2,6 +2,8 @@ import React from 'react';
 
 import Axios from 'axios';
 
+import moment from 'moment';
+
 class AuctionsShow extends React.Component {
   state = {
     auction: {
@@ -19,12 +21,16 @@ class AuctionsShow extends React.Component {
     }
   }
 
+  // let date = (moment(checkInDate).format('LL'));
+
   componentDidMount() {
     Axios
       .get(`/api/auctions/${this.props.match.params.id}`)
       .then(res => this.setState({ auction: res.data }))
       .catch(err => console.log(err));
   }
+
+
 
   render() {
     return(
@@ -44,7 +50,7 @@ class AuctionsShow extends React.Component {
             </li>
 
             <li>
-              From: {this.state.auction.checkInDate}, for {this.state.auction.nights} nights
+              From: {moment(this.state.auction.checkInDate).format('do MMMM, YYYY')}, for {this.state.auction.nights} nights
             </li>
 
             <li>

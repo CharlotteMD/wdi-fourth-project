@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 class AuctionsIndex extends Component {
       state = {
@@ -37,7 +38,7 @@ class AuctionsIndex extends Component {
 
       render() {
         return(
-          <div>
+          <div className="auction-index">
             <h1>Current Auctions</h1>
             <div>
               <div className="container">
@@ -55,7 +56,7 @@ class AuctionsIndex extends Component {
                               </a>
                             </li>
                             <li>
-                              From: {auctions.checkInDate}, for {auctions.nights} nights
+                              From: {moment(auctions.checkInDate).format('do MMMM, YYYY')}, for {auctions.nights} nights
                             </li>
                             <li>
                               Reserve Price: £{auctions.reservePrice}
