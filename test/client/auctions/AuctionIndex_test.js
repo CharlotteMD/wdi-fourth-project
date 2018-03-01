@@ -10,10 +10,10 @@ import AuctionsIndex from '../../../src/components/auctions/AuctionsIndex';
 
 const auctionData = [
   {
-    '_id': '1',
+
     'bids': [],
     'hotel': {
-      '_id': '5a980b8da7d9ecf50b1da552',
+      '_id': '1',
       'name': 'ANdAZ, London Liverpool Street',
       'image': 'https://media-cdn.tripadvisor.com/media/photo-s/12/0f/50/6b/andaz-london-liverpool.jpg',
       'website': 'https://londonliverpoolstreet.andaz.hyatt.com/en/hotel/home.html',
@@ -31,13 +31,13 @@ const auctionData = [
     'details': 'Enjoy the night in East London. Stay at the ANdAZ, Liverpool Street and enjoy breakfast included at our Eastway Restaurant.',
     'createdAt': '2018-03-01T14:17:49.788Z',
     'updatedAt': '2018-03-01T14:17:49.788Z',
-    'id': '5a980b8da7d9ecf50b1da555'
+    'id': '1'
   },
   {
-    '_id': '1',
+
     'bids': [],
     'hotel': {
-      '_id': '5a980b8da7d9ecf50b1da553',
+      '_id': '2',
       'name': 'ibis, London City',
       'image': 'https://s-ec.bstatic.com/images/hotel/max1024x768/975/97514031.jpg',
       'website': 'https://exp.cdn-hotels.com/hotels/2000000/1210000/1200100/1200089/1200089_86_z.jpg',
@@ -55,7 +55,7 @@ const auctionData = [
     'details': 'Spend a bargain weekend in the City of London at  ibis, London City. Stay with us and see the city',
     'createdAt': '2018-03-01T14:17:49.788Z',
     'updatedAt': '2018-03-01T14:17:49.788Z',
-    'id': '5a980b8da7d9ecf50b1da556'
+    'id': '2'
   }
 ];
 
@@ -96,8 +96,32 @@ describe('Auctions Index tests', () => {
     promise.then(() => {
       wrapper.update();
       expect(wrapper.find('div.showlink').length).to.eq(2);
-      // expect(wrapper.find({ href: '/auctions/_1' }).length).to.eq(1);
-      // expect(wrapper.find({ href: '/auctions/_2' }).length).to.eq(1);
+      expect(wrapper.find({ href: '/auctions/1' }).length).to.eq(1);
+      expect(wrapper.find({ href: '/auctions/2' }).length).to.eq(1);
+      done();
+    });
+  });
+
+  it('should display links to hotel show pages', done => {
+    promise.then(() => {
+      wrapper.update();
+      expect(wrapper.find('h3').length).to.eq(2);
+      expect(wrapper.find({ href: 'hotels/1' }).length).to.eq(1);
+      expect(wrapper.find({ href: 'hotels/2' }).length).to.eq(1);
+
+      done();
+    });
+  });
+
+  it('should display auction data', done => {
+    promise.then(() => {
+      wrapper.update();
+      expect(wrapper.find('div.col-sm').length).to.eq(2);
+      // expect(wrapper.find({ h3: 'ibis, London City' }).length).to.eq(1);
+      // expect(wrapper.find({ h3: 'ANdAZ, London Liverpool Street' }).length).to.eq(1);
+      expect(wrapper.find('img').length).to.eq(2);
+      expect(wrapper.find({ src: 'https://s-ec.bstatic.com/images/hotel/max1024x768/975/97514031.jpg' }).length).to.eq(1);
+      expect(wrapper.find({ src: 'https://media-cdn.tripadvisor.com/media/photo-s/12/0f/50/6b/andaz-london-liverpool.jpg' }).length).to.eq(1);
       done();
     });
   });
