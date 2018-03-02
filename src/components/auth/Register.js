@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 
 import RegisterForm from './RegisterForm';
+import UserForm from './UserForm';
 import Auth from '../../lib/Auth';
 
 class Register extends React.Component {
@@ -83,6 +84,19 @@ class Register extends React.Component {
     return (
       <div>
         <h1>Register</h1>
+        <UserForm
+          user={this.state.user}
+          handleUserChange={this.handleUserChange}
+          handleSubmit={this.handleSubmit}
+          showHotelForm={this.state.showHotelForm}
+        />
+        <div className="form-group">
+          <select onChange={this.toggleHotelForm} value="">
+            <option value="" disabled>Please Select</option>
+            <option value="guest">Guest</option>
+            <option value="hotel">User</option>
+          </select>
+        </div>
         <RegisterForm
           user={this.state.user}
           hotel={this.state.hotel}

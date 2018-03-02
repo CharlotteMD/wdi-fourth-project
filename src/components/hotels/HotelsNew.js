@@ -26,12 +26,15 @@ class HotelsNew extends React.Component {
 
   render() {
     return (
-      <HotelsForm
-        history={this.props.history}
-        handleSubmit={this.handleSubmit}
-        handleChange={this.handleChange}
-        hotel={this.state.hotel}
-      />
+      <div>
+        <HotelsForm
+          history={this.props.history}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          hotel={this.state.hotel}
+        />
+        <button className="main-button">Create</button>
+      </div>
     );
   }
 }
