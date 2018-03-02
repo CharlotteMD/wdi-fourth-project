@@ -15,7 +15,10 @@ const auctionSchema = mongoose.Schema({
   maxGuests: Number,
   board: String,
   details: String,
-  bids: [ bidSchema ]
+  bids: [ {
+    bid: Number,
+    createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  } ]
 }, {
   timestamps: true
 });

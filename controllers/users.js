@@ -19,7 +19,8 @@ function usersCreate(req, res, next) {
 function usersShow(req, res, next) {
   User
     .findById(req.params.id)
-    .populate('bids', 'hotels')
+    .populate({path: 'bids', model: 'Auction', populate: {path: 'hotel', model: 'Hotel'}})
+    .populate('hotels')
     .exec()
     .then((user) => {
       if(!user) return res.notFound();

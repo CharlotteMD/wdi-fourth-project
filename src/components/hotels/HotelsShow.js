@@ -1,6 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 import Axios from 'axios';
+
+// import HotelsEdit from './HotelsEdit';
 
 class HotelsShow extends React.Component {
   state = {
@@ -54,18 +58,18 @@ class HotelsShow extends React.Component {
 
         {/* if user owns the hotel */}
 
-        {/* <div>
-          <Link to={`/users/${this.state.hotel._id}/edit`}>
-          <button className="main-button">Edit Hotel</button>
-        </Link> */}
+        <div>
+          <Link to={`/hotels/${this.state.hotel._id}/edit`}>
+            <button className="main-button">Edit Hotel</button>
+          </Link>
 
-        <button className="main-button" onClick={this.deleteHotel}>
-          Delete Hotel
-        </button>
-        <p>This will also delete any auctions associated with your hotel</p>
+          <button className="main-button" onClick={this.deleteHotel}>
+            Delete Hotel
+          </button>
+          <p>This will also delete any auctions associated with your hotel</p>
 
+        </div>
       </div>
-
     );
   }
 }

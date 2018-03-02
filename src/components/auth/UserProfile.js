@@ -2,42 +2,12 @@ import React from 'react';
 
 import Axios from 'axios';
 
-// import moment from 'moment';
-
 import Auth from '../../lib/Auth';
 
 
 class UserProfile extends React.Component {
   state = {
-    user: {
-      name: '',
-      email: '',
-      password: ''
-    }
-    // auction: {
-    //   hotel: {
-    //     name: '',
-    //     image: '',
-    //     website: '',
-    //     location: '',
-    //     amenities: [''],
-    //     info: '',
-    //     admin: {
-    //       name: ''
-    //     },
-    //     stars: ''
-    //   },
-    //   reservePrice: '',
-    //   checkInDate: '',
-    //   nights: '',
-    //   maxGuests: '',
-    //   board: '',
-    //   details: '',
-    //   bids: [{
-    //     bid: '',
-    //     createdBy: ''
-    //   }]
-    // }
+    user: null
   }
 
 
@@ -45,30 +15,15 @@ class UserProfile extends React.Component {
   componentDidMount() {
 
     Axios
-      .get(`/api/users/${this.props.match.params.id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
-    // need to set authorization header with token as second argument of get request. for post/put requests with secureRoute it needs to be the third argument
+      .get(`/api/users/${Auth.getPayload().userId}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
       .then(res => {
-        console.log(res.data);
-        if ((this.props.match.params.id) === ('undefined'))  {
-
-          (this.props.history.push('/login'));
-
-        } else {
-
-          (this.setState({ user: res.data }));
-
-        }
+        this.setState({ user: res.data }, () => console.log(this.state.user));
       })
       .catch(err => console.log(err));
 
   }
 
   deleteUser = () => {
-    // Axios
-    //   .delete(`/api/hotels/${this.state.hotel._id}`)
-    //   .then(() => this.props.history.push('/'))
-    //   .catch(err => console.log(err));
-
     Axios
       .delete(`/api/users/${this.props.match.params.id}`)
       .then(() => this.props.history.push('/'))
@@ -82,7 +37,7 @@ class UserProfile extends React.Component {
 
         <div className="userInfo">
 
-          <h2>Welcome back, {this.state.user.name}</h2>
+          {this.state.user && <h2>Welcome back, {this.state.user.name}</h2>}
 
           <div>
             {/* <Link to={`/users/${this.state.user.id}/edit`}>
@@ -100,12 +55,60 @@ class UserProfile extends React.Component {
 
             <h3>Your Hotels</h3>
 
+            <div className="newHotel">
 
+            </div>
 
-            {/* <a href={this.user.hotel._id}><img src={this.user.hotel.image} /></a> */}
+            {this.state.user && this.state.user.hotels.map(hotel => {
+              return(
+                <div key={hotel._id}>
+                  <p>{hotel.name}</p>
+                  <a href={`/hotels/${hotel._id}`}>
+                    <img src={hotel.image}/>
+                  </a>
+                </div>
+              );
+            })}
 
+            <div className="auctions">
 
+              {/* view your current auctions */}
+              {/*  create new auctions */}
+
+            </div>
           </div>
+
+          <div className="bidInfo">
+
+            <h3>Your Bids</h3>
+            {this.state.user && this.state.user.bids.map(bid => {
+              return(
+                <div key={bid.id}>
+
+
+                  {/* <a href={`/auctions/${bid.id}`}> */}
+                    <p>{bid.hotel.name}</p>
+                    <img src={bid.hotel.image}/>
+                  {/* </a> */}
+
+
+                  {/* write some code to show whether you're winning in css and if you are yet to bid on anything, go to auctions index */}
+                  <p>Your Bids</p>
+                  <p>{bid.bids.filter(bid => bid.createdBy === this.state.user.id).reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
+
+                  <p>Current Highest Bid</p>
+                  <p>{bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
+
+                </div>
+              );
+            })}
+          </div>
+
+
+
+
+
+
 
         </div>
 
