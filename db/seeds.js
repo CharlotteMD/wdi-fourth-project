@@ -114,8 +114,7 @@ User
         maxGuests: 3,
         board: 'Bed only',
         details: 'We are delighted to be able to offer our honeymoon suite. The offer will include the master bedroom and ajoining leisure rooms.',
-        bid:
-        [
+        bids: [
           {
             createdBy: globalUserData[0],
             bid: 600
@@ -135,8 +134,7 @@ User
         maxGuests: 2,
         board: 'Bed and Breakfast',
         details: 'Enjoy the night in East London. Stay at the ANdAZ, Liverpool Street and enjoy breakfast included at our Eastway Restaurant.',
-        bid:
-        [
+        bids: [
           {
             createdBy: globalUserData[2],
             bid: 400
@@ -159,8 +157,7 @@ User
         maxGuests: 3,
         board: 'Bed only',
         details: 'Spend a bargain weekend in the City of London at ibis, London City. Stay with us and see the city',
-        bid:
-        [
+        bids: [
           {
             createdBy: globalUserData[4],
             bid: 50

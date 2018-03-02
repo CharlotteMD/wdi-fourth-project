@@ -22,7 +22,7 @@ class userLogin extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     Axios
-      .post('/api/users/login', this.state.user)
+      .post('/api/login', this.state.user)
       .then(res => {
         Auth.setToken(res.data.token);
         this.props.history.push('/auctions');

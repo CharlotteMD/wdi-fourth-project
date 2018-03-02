@@ -8,10 +8,12 @@ import './scss/style.scss';
 import Navbar from './components/utility/Navbar';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import UserProfile from './components/auth/UserProfile';
 
 import AuctionsRoutes from './components/auctions/AuctionsRoutes';
 import HotelsRoutes from './components/hotels/HotelsRoutes';
 
+import Auth from './lib/Auth';
 
 
 
@@ -39,6 +41,13 @@ class App extends React.Component {
           <Route path="/login" component={Login} />
           <AuctionsRoutes />
           <HotelsRoutes />
+
+          { Auth.isAuthenticated() &&
+            // id equals users/id 
+
+            <Route path="/users/:id" component={UserProfile}/>
+          }
+
         </div>
       </Router>
     );

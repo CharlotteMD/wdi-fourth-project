@@ -21,6 +21,13 @@ class HotelsShow extends React.Component {
       .catch(err => console.log(err));
   }
 
+  deleteHotel = () => {
+    Axios
+      .delete(`/api/hotels/${this.state.hotel._id}`)
+      .then(() => this.props.history.push('/'))
+      .catch(err => console.log(err));
+  }
+
   render() {
     return(
 
@@ -44,6 +51,18 @@ class HotelsShow extends React.Component {
             </ul>
           </div>;
         })} */}
+
+        {/* if user owns the hotel */}
+
+        {/* <div>
+          <Link to={`/users/${this.state.hotel._id}/edit`}>
+          <button className="main-button">Edit Hotel</button>
+        </Link> */}
+
+        <button className="main-button" onClick={this.deleteHotel}>
+          Delete Hotel
+        </button>
+        <p>This will also delete any auctions associated with your hotel</p>
 
       </div>
 
