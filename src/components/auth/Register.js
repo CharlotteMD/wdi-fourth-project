@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 
-import RegisterForm from './RegisterForm';
+import HotelsForm from '../hotels/HotelsForm';
 import UserForm from './UserForm';
 import Auth from '../../lib/Auth';
 
@@ -94,10 +94,10 @@ class Register extends React.Component {
           <select onChange={this.toggleHotelForm} value="">
             <option value="" disabled>Please Select</option>
             <option value="guest">Guest</option>
-            <option value="hotel">User</option>
+            <option value="hotel">Hotel</option>
           </select>
         </div>
-        <RegisterForm
+        { this.state.showHotelForm && <HotelsForm
           user={this.state.user}
           hotel={this.state.hotel}
           handleUserChange={this.handleUserChange}
@@ -105,7 +105,8 @@ class Register extends React.Component {
           handleSubmit={this.handleSubmit}
           toggleHotelForm={this.toggleHotelForm}
           showHotelForm={this.state.showHotelForm}
-        />
+        />}
+        <button onClick={this.state.handleSubmit}>Submit</button>
       </div>
     );
   }
