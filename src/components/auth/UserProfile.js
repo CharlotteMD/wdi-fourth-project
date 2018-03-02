@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import Axios from 'axios';
 
 import Auth from '../../lib/Auth';
@@ -56,6 +58,11 @@ class UserProfile extends React.Component {
             <h3>Your Hotels</h3>
 
             <div className="newHotel">
+
+              <h4>Create New Hotel</h4>
+              <Link to="/hotels/new">
+                <button className="main-button">New Hotel</button>
+              </Link>
 
             </div>
 
