@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Axios from 'axios';
 
@@ -84,7 +84,10 @@ class AuctionsShow extends React.Component {
             <button className="main-button" onClick={this.deleteAuction}>
               Delete Auction
             </button>
-        
+
+            <Link to={`/auctions/${this.state.auction._id}/edit`}>
+              <button className="main-button">Edit Auction</button>
+            </Link>
 
 
           </ul>
