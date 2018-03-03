@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import Axios from 'axios';
 
@@ -31,6 +31,13 @@ class AuctionsShow extends React.Component {
     Axios
       .get(`/api/auctions/${this.props.match.params.id}`)
       .then(res => this.setState({ auction: res.data }))
+      .catch(err => console.log(err));
+  }
+
+  deleteAuction = () => {
+    Axios
+      .delete(`/api/auctions/${this.props.match.params.id}`)
+      .then(() => this.props.history.push('/'))
       .catch(err => console.log(err));
   }
 
@@ -74,7 +81,11 @@ class AuctionsShow extends React.Component {
               {this.state.auction.bids}
             </li> */}
 
-            
+            <button className="main-button" onClick={this.deleteAuction}>
+              Delete Auction
+            </button>
+        
+
 
           </ul>
 
