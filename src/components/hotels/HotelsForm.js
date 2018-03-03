@@ -2,7 +2,7 @@ import React from 'react';
 
 function HotelsForm({ handleHotelChange, hotel }) {
   return (
-    <div>
+    <div className="container">
       <div className="form-group">
         <input
           type="text"

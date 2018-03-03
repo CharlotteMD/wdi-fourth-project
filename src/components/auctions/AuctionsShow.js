@@ -15,8 +15,11 @@ class AuctionsShow extends React.Component {
       nights: '',
       maxGuests: '',
       board: '',
-      details: ''
-      // bids: [ bidSchema ]
+      details: '',
+      bids: {
+        bid: '',
+        createdBy: ''
+      }
 
     }
   }
@@ -40,10 +43,15 @@ class AuctionsShow extends React.Component {
           <ul>
 
 
+            <li>
+              <a href={`/hotels/${this.state.auction.hotel._id}`}>
+                <h2>{this.state.auction.hotel.name}</h2>
+              </a>
+            </li>
 
-            <a href={`/hotels/${this.state.auction.hotel._id}`}>
-              <h2>{this.state.auction.hotel.name}</h2>
-            </a>
+            <li>
+              <img src={this.state.auction.hotel.image}/>
+            </li>
 
             <li>
               <p>{this.state.auction.details}</p>
@@ -61,11 +69,9 @@ class AuctionsShow extends React.Component {
               {this.state.auction.board}
             </li>
 
-            {' '}
-
-            <li>
+            {/* <li>
               {this.state.auction.bids}
-            </li>
+            </li> */}
 
           </ul>
 
