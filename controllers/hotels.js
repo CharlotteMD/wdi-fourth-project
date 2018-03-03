@@ -20,7 +20,8 @@ function hotelsCreate(req, res, next) {
 function hotelsShow(req, res, next) {
   Hotel
     .findById(req.params.id)
-    .populate('auction')
+    .populate('auctions')
+    // .populate({path: 'bids', model: 'Auction', populate: {path: 'hotel', model: 'Hotel'}})
     .exec()
     .then((hotel) => {
       if(!hotel) return res.notFound();

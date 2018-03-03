@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 // const bcrypt = require('bcrypt');
 
+// const auctionSchema = require('./auction');
+
 const hotelSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   image: { type: String, required: true },
@@ -10,6 +12,7 @@ const hotelSchema = new mongoose.Schema({
   info: { type: String, required: true },
   admin: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   stars: Number
+  // auctions: [{ auctionSchema }]
 });
 
 // hotelSchema.set('toJSON', {
@@ -18,9 +21,12 @@ const hotelSchema = new mongoose.Schema({
 //   transform(obj, json) {
 //     delete json._id;
 //     delete json.__v;
-//     delete json.password;
 //   }
 // });
+
+// hotelSchema.methods.belongsTo = function hotelBelongsTo(user) {
+//   return this.createdBy.id === user.id;
+// };
 
 // hotelSchema
 //   .virtual('passwordConfirmation')

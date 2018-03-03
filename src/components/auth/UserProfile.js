@@ -94,8 +94,8 @@ class UserProfile extends React.Component {
 
 
                   {/* <a href={`/auctions/${bid.id}`}> */}
-                    <p>{bid.hotel.name}</p>
-                    <img src={bid.hotel.image}/>
+                  <p>{bid.hotel.name}</p>
+                  <img src={bid.hotel.image}/>
                   {/* </a> */}
 
 

@@ -14,15 +14,21 @@ class HotelsShow extends React.Component {
       location: '',
       info: '',
       amenities: [''],
-      stars: ''
+      stars: '',
+      auctions: ['']
     }
   }
 
+
   componentDidMount() {
+
     Axios
       .get(`/api/hotels/${this.props.match.params.id}`)
-      .then(res => this.setState({ hotel: res.data }))
+      .then(res => {
+        this.setState({ hotel: res.data }, () => console.log(this.state.hotel));
+      })
       .catch(err => console.log(err));
+
   }
 
   deleteHotel = () => {
@@ -58,6 +64,11 @@ class HotelsShow extends React.Component {
 
         {/* if user owns the hotel */}
 
+        <h4>Create New Auction</h4>
+        <Link to="/auctions/new">
+          <button className="main-button">New Auction</button>
+        </Link>
+
         <div>
           <Link to={`/hotels/${this.state.hotel._id}/edit`}>
             <button className="main-button">Edit Hotel</button>
@@ -67,6 +78,23 @@ class HotelsShow extends React.Component {
             Delete Hotel
           </button>
           <p>This will also delete any auctions associated with your hotel</p>
+
+          {/* <p>{this.state.hotel}</p> */}
+
+          {/* <div className="currentAuctions">
+
+            {this.state.hotel && this.state.hotel.auctions.map(auction => {
+              return(
+                <div key={auction.id}>
+                  <p>{auction.checkInDate}</p>
+                  <a href={`/auctions/${auction._id}`}>
+                    <p>{auction.board}</p>
+                  </a>
+                </div>
+              );
+            })}
+
+          </div> */}
 
         </div>
       </div>

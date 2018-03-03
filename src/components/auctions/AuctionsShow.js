@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Axios from 'axios';
 
@@ -72,6 +73,8 @@ class AuctionsShow extends React.Component {
             {/* <li>
               {this.state.auction.bids}
             </li> */}
+
+            
 
           </ul>
 
