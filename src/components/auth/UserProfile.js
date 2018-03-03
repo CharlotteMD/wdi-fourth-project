@@ -53,39 +53,34 @@ class UserProfile extends React.Component {
 
           </div>
 
-          <div className="hotelInfo">
+          <div className="hotel-show">
 
             <h3>Your Hotels</h3>
 
-            <div className="newHotel">
-
-              <h4>Create New Hotel</h4>
               <Link to="/hotels/new">
                 <button className="main-button">New Hotel</button>
               </Link>
 
+              {this.state.user && this.state.user.hotels.map(hotel => {
+                return(
+                  <div key={hotel._id}>
+                    <h4>{hotel.name}</h4>
+                    <a href={`/hotels/${hotel._id}`}>
+                      <img src={hotel.image}/>
+                    </a>
+                  </div>
+                );
+              })}
+
             </div>
 
-            {this.state.user && this.state.user.hotels.map(hotel => {
-              return(
-                <div key={hotel._id}>
-                  <p>{hotel.name}</p>
-                  <a href={`/hotels/${hotel._id}`}>
-                    <img src={hotel.image}/>
-                  </a>
-                </div>
-              );
-            })}
-
-            <div className="auctions">
 
               {/* view your current auctions */}
               {/*  create new auctions */}
 
-            </div>
-          </div>
 
-          <div className="bidInfo">
+
+          <div className="hotel-show">
 
             <h3>Your Bids</h3>
             {this.state.user && this.state.user.bids.map(bid => {
@@ -94,7 +89,7 @@ class UserProfile extends React.Component {
 
 
                   {/* <a href={`/auctions/${bid.id}`}> */}
-                  <p>{bid.hotel.name}</p>
+                  <h4>{bid.hotel.name}</h4>
                   <img src={bid.hotel.image}/>
                   {/* </a> */}
 
