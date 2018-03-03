@@ -42,9 +42,9 @@ class UserProfile extends React.Component {
           {this.state.user && <h2>Welcome back, {this.state.user.name}</h2>}
 
           <div>
-            {/* <Link to={`/users/${this.state.user.id}/edit`}>
-            <button className="main-button">Edit Profile</button>
-          </Link> */}
+            <Link to={`/users/${Auth.getPayload().userId}/edit`}>
+              <button className="main-button">Edit Profile</button>
+            </Link>
 
             <button className="main-button" onClick={this.deleteUser}>
               Delete Your Profile

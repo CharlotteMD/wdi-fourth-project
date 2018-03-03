@@ -13,10 +13,16 @@ router.route('/register')
 router.route('/login')
   .post(auth.login);
 
+// router.route('/users/:id/edit')
+//   .get(secureRoute, users.edit);
+
 router.route('/users/:id')
   .get(secureRoute, users.show)
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
+
+// router.route('/hotels/:id/edit')
+//   .get(secureRoute, hotels.edit);
 
 router.route('/hotels/:id')
   .get(hotels.show)
