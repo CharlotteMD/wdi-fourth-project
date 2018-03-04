@@ -63,8 +63,7 @@ class AuctionsShow extends React.Component {
   render() {
     return(
       <div className="auction-show">
-        <div className="row">
-
+        <div className="sectionone">
           <ul>
 
 
@@ -94,9 +93,6 @@ class AuctionsShow extends React.Component {
               {this.state.auction.board}
             </li>
 
-            {/* <li>
-              {this.state.auction.bids}
-            </li> */}
 
             <button className="main-button" onClick={this.deleteAuction}>
               Delete Auction
@@ -105,38 +101,55 @@ class AuctionsShow extends React.Component {
             <Link to={`/auctions/${this.state.auction._id}/edit`}>
               <button className="main-button">Edit Auction</button>
             </Link>
-
-
-            <h3>Make a bid</h3>
-
-            <form className="form-inline">
-              <div className="form-group mb-2">
-                <label htmlFor="staticEmail2" className="sr-only">Bid for this room</label>
-                <input type="number" className="form-control-number" id="bid"></input>
-                <button type="submit" className="btn btn-primary mb-2">Make Bid</button>
-              </div>
-            </form>
-
-            {/* {this.state.auction && this.state.auction.bid.map(bid => {
-              return(
-                <div key={bid.id}>
-
-                  <p>Current Highest Bid</p>
-                  <p>{bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
-
-                </div>
-              );
-            })} */}
-
-
-
-
-
           </ul>
+        </div>
+
+        <div className="sectiontwo">
+
+          <h3>Your Bids</h3>
+          {this.state.user && this.state.user.bids.map(bid => {
+            return(
+              <div key={bid.id}>
+
+
+                <p>Your Bids</p>
+                <p>{bid.bids.filter(bid => bid.createdBy === this.state.user.id).reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
+
+                <p>Current Highest Bid</p>
+                <p>{bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
+
+              </div>
+            );
+          })}
 
 
         </div>
+
+
+        <div className="sectiontwo">
+
+          <h3>Make a bid</h3>
+
+          <form className="form-inline">
+            <div className="form-group mb-2">
+              <label htmlFor="staticEmail2" className="sr-only">Bid for this room</label>
+              <input type="number" className="form-control-number" id="bid"></input>
+              <button type="submit" className="btn btn-primary mb-2">Make Bid</button>
+            </div>
+          </form>
+
+        </div>
       </div>
+
+
+
+
+
+
+
+
+
+
     );
   }
 }
