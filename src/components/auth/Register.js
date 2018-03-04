@@ -35,6 +35,7 @@ class Register extends React.Component {
   handleHotelChange = ({ target: { name, value }}) => {
     const hotel = Object.assign({}, this.state.hotel, { [name]: value });
     this.setState({ hotel });
+    console.log('hotel info: ', hotel);
   }
 
   toggleHotelForm = (e) => {
@@ -109,7 +110,6 @@ class Register extends React.Component {
           toggleHotelForm={this.toggleHotelForm}
           showHotelForm={this.state.showHotelForm}
         />}
-        <button onClick={this.state.handleSubmit}>Submit</button>
       </div>
     );
   }
