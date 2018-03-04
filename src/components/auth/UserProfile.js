@@ -33,6 +33,10 @@ class UserProfile extends React.Component {
       .catch(err => console.log(err));
   }
 
+  // topBid = {bid.amount.reduce((topBid, bid), 0)};
+
+
+
 
   render() {
     return(
@@ -84,7 +88,7 @@ class UserProfile extends React.Component {
 
           <div className="hotel-show">
 
-            <h3>Your Bids</h3>
+
             {this.state.user && this.state.user.bids.map(bid => {
               return(
                 <div key={bid.id}>
@@ -97,11 +101,26 @@ class UserProfile extends React.Component {
 
 
                   {/* write some code to show whether you're winning in css and if you are yet to bid on anything, go to auctions index */}
-                  <p>Your Bids</p>
+                  <p>Your Bid</p>
                   <p>{bid.bids.filter(bid => bid.createdBy === this.state.user.id).reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
 
-                  <p>Current Highest Bid</p>
-                  <p>{bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
+                  {bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}
+
+                  { bid.bid > topBid &&
+                    <p>You are currently the highest bidder!</p>}
+
+                  { bid.bid < topBid &&
+                    <p>You are not currently the highest bidder! Why not bid again?</p>
+
+
+
+                  }
+
+
+
+
+
+                  <p></p>
 
                 </div>
               );

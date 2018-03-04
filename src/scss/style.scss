@@ -5,6 +5,7 @@
 @import "show";
 @import "hotel-show";
 
+
 body {
   font-family: $text-font;
   text-align: center;
@@ -31,6 +32,7 @@ button {
   border-radius: 25%;
   border: none;
   color: $emph-color;
+  margin: 10px;
 }
 
 button:hover {

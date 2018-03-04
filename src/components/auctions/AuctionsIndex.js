@@ -72,7 +72,7 @@ class AuctionsIndex extends Component {
 
                             <div className="showlink">
                               <Link to={`/auctions/${auction.id}`}>
-                                <button>View</button>
+                                <button>View Auction</button>
                               </Link>
                             </div>
 
