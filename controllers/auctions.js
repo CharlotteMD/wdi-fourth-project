@@ -11,6 +11,7 @@ function auctionsIndex(req, res, next) {
 
 function auctionsCreate(req, res, next) {
 
+  // take hotel id 
   // if(req.file) req.body.image = req.file.filename;
 
   Auction

@@ -27,8 +27,9 @@ class UserProfile extends React.Component {
 
   deleteUser = () => {
     Axios
-      .delete(`/api/users/${this.props.match.params.id}`)
-      .then(() => this.props.history.push('/'))
+      .delete(`/api/users/${this.props.match.params.id}`,
+        { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
+      .then(() => this.props.history.push('/auctions'))
       .catch(err => console.log(err));
   }
 

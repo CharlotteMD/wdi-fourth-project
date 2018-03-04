@@ -21,28 +21,20 @@ class Register extends React.Component {
   handleAuctionChange = ({ target: { name, value }}) => {
     const auction = Object.assign({}, this.state.auction, { [name]: value });
     this.setState({ auction });
+    console.log('auction info: ', auction);
   }
-
-  // toggleHotelForm = (e) => {
-  //   if (e.target.value === 'auction') {
-  //     this.setState({ showHotelForm: true });
-  //   } else {
-  //     this.setState({ showHotelForm: false });
-  //   }
-  // }
 
   handleSubmit = (e) => {
     e.preventDefault();
     Axios
-      .post('/api/auctions', this.state.auction)
+      .post('/api/auctions/new', this.state.auction, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
       .then(res => {
+        console.log('the response from the api', res);
         Auth.setToken(res.data.token);
         // take url for hotel
-
-        Axios
-          .post('/api/auctions/new', this.state.auction, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
-          .then(res => this.props.history.push(`/auctions/${res.data._id}`));
-      });
+        this.props.history.push(`/auctions/${res.data._id}`);
+      })
+      .catch(err => console.log(err));
   }
 
 
@@ -55,7 +47,6 @@ class Register extends React.Component {
           handleAuctionChange={this.handleAuctionChange}
           handleSubmit={this.handleSubmit}
         />
-        <button onClick={this.state.handleSubmit}>Submit</button>
       </div>
     );
   }

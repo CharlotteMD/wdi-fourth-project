@@ -13,16 +13,12 @@ router.route('/register')
 router.route('/login')
   .post(auth.login);
 
-// router.route('/users/:id/edit')
-//   .get(secureRoute, users.edit);
 
 router.route('/users/:id')
   .get(secureRoute, users.show)
   .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
 
-// router.route('/hotels/:id/edit')
-//   .get(secureRoute, hotels.edit);
 
 router.route('/hotels/:id')
   .get(hotels.show)
@@ -32,8 +28,8 @@ router.route('/hotels/:id')
 router.route('/hotels/new')
   .post(secureRoute, hotels.create);
 
-// router.route('/auctions/new')
-//   .post(secureRoute, auctions.new); // only hotels can create an auction
+router.route('/auctions/new')
+  .post(secureRoute, auctions.create);
 
 router.route('/auctions/:id')
   .get(auctions.show)

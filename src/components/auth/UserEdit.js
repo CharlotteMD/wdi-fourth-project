@@ -8,6 +8,10 @@ import UserForm from './UserForm';
 class UsersEdit extends React.Component {
   state = {
     user: {
+      name: '',
+      email: '',
+      password: '',
+      passwordConfirmation: ''
     }
   };
 
@@ -18,7 +22,7 @@ class UsersEdit extends React.Component {
       .catch(err => console.log(err));
   }
 
-  handleChange = ({ target: { name, value } }) => {
+  handleUserChange = ({ target: { name, value } }) => {
     const user = Object.assign({}, this.state.user, { [name]: value });
     this.setState({ user });
   }
@@ -36,15 +40,13 @@ class UsersEdit extends React.Component {
   render() {
     return (
       <div>
+        <h1>Edit your profile</h1>
         <UserForm
           history={this.props.history}
           handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
+          handleChange={this.handleUserChange}
           user={this.state.user}
         />
-        <div>
-          <button className="save-button">Save</button>
-        </div>
       </div>
     );
   }

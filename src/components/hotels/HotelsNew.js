@@ -7,6 +7,13 @@ import Auth from '../../lib/Auth';
 class HotelsNew extends React.Component {
   state = {
     hotel: {
+      name: '',
+      image: '',
+      website: '',
+      location: '',
+      amenities: '',
+      info: '',
+      stars: ''
     }
   };
 
@@ -33,7 +40,6 @@ class HotelsNew extends React.Component {
           handleChange={this.handleChange}
           hotel={this.state.hotel}
         />
-        <button className="main-button">Create</button>
       </div>
     );
   }

@@ -46,7 +46,7 @@ const UserForm = ({ handleUserChange, handleSubmit, user }) => {
             className="form-control"
           />
         </div>
-        <button className="main-button">Register</button>
+        <button className="main-button">Save</button>
       </form>
     </div>
   );
