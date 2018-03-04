@@ -16,7 +16,7 @@ const auctionSchema = mongoose.Schema({
   board: String,
   details: String,
   bids: [ {
-    bid: Number,
+    amount: Number,
     createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
   } ]
 }, {

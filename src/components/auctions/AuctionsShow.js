@@ -21,7 +21,7 @@ class AuctionsShow extends React.Component {
       board: '',
       details: '',
       bids: {
-        bid: '',
+        amount: '',
         createdBy: ''
       }
 
@@ -47,6 +47,7 @@ class AuctionsShow extends React.Component {
   handleBidChange = ({ target: { name, value } }) => {
     const bid = Object.assign({}, this.state.bid, { [name]: value });
     this.setState({ bid });
+    console.log('bid info: ', bid);
   }
 
   handleBidSubmit = (e) => {
@@ -130,25 +131,23 @@ class AuctionsShow extends React.Component {
 
           <h3>Make a bid</h3>
 
-          <form className="form-inline">
+          <form onSubmit={this.handleBidSubmit} className="form-inline">
             <div className="form-group mb-2">
               <label htmlFor="staticEmail2" className="sr-only">Bid for this room</label>
-              <input type="number" className="form-control-number" id="bid"></input>
+              <input
+                type="number"
+                name="bid"
+                className="form-control-number"
+                id="bid"
+                onChange={this.handleBidChange}
+                value={this.state.auction.bids.amount}
+              />
               <button type="submit" className="btn btn-primary mb-2">Make Bid</button>
             </div>
           </form>
 
         </div>
       </div>
-
-
-
-
-
-
-
-
-
 
     );
   }

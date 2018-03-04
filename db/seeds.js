@@ -117,13 +117,13 @@ User
         bids: [
           {
             createdBy: globalUserData[0],
-            bid: 600
+            amount: 600
           },{
             createdBy: globalUserData[3],
-            bid: 670
+            amount: 670
           },{
             createdBy: globalUserData[9],
-            bid: 700
+            amount: 700
           }
         ]
       },{
@@ -137,16 +137,16 @@ User
         bids: [
           {
             createdBy: globalUserData[2],
-            bid: 400
+            amount: 400
           },{
             createdBy: globalUserData[7],
-            bid: 450
+            amount: 450
           },{
             createdBy: globalUserData[1],
-            bid: 495
+            amount: 495
           },{
             createdBy: globalUserData[5],
-            bid: 500
+            amount: 500
           }
         ]
       },{
@@ -160,22 +160,22 @@ User
         bids: [
           {
             createdBy: globalUserData[4],
-            bid: 50
+            amount: 50
           },{
             createdBy: globalUserData[9],
-            bid: 55
+            amount: 55
           },{
             createdBy: globalUserData[8],
-            bid: 90
+            amount: 90
           },{
             createdBy: globalUserData[7],
-            bid: 100
+            amount: 100
           },{
             createdBy: globalUserData[6],
-            bid: 125
+            amount: 125
           },{
             createdBy: globalUserData[1],
-            bid: 140
+            amount: 140
           }
         ]
       }
