@@ -106,15 +106,15 @@ class UserProfile extends React.Component {
 
                   {bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}
 
-                  { bid.bid > topBid &&
+                  {/* { bid.bid > topBid &&
                     <p>You are currently the highest bidder!</p>}
 
                   { bid.bid < topBid &&
-                    <p>You are not currently the highest bidder! Why not bid again?</p>
+                    <p>You are not currently the highest bidder! Why not bid again?</p> */}
 
 
 
-                  }
+                  {/* } */}
 
 
 
