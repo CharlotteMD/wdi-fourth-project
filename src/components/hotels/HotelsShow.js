@@ -55,7 +55,7 @@ class HotelsShow extends React.Component {
 
         <p className="info">{this.state.hotel.info}</p>
 
-        <p>{this.state.hotel.amenities}</p>
+        <p>Facilities: {this.state.hotel.amenities}</p>
 
         {/* { this.state.hotels.map((hotel, i) => {
           return <div key={i}>
@@ -66,8 +66,6 @@ class HotelsShow extends React.Component {
         })} */}
 
         {/* if user owns the hotel */}
-
-        <h4>Create New Auction</h4>
         <Link to="/auctions/new">
           <button className="main-button">New Auction</button>
         </Link>
