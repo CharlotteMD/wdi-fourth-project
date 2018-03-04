@@ -13,11 +13,12 @@ class HotelsNew extends React.Component {
       location: '',
       amenities: '',
       info: '',
-      stars: ''
+      stars: '',
+      admin: ''
     }
   };
 
-  handleChange = ({ target: { name, value } }) => {
+  handleHotelChange = ({ target: { name, value } }) => {
     const hotel = Object.assign({}, this.state.hotel, { [name]: value });
     this.setState({ hotel });
   }
@@ -37,7 +38,7 @@ class HotelsNew extends React.Component {
         <HotelsForm
           history={this.props.history}
           handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
+          handleHotelChange={this.handleHotelChange}
           hotel={this.state.hotel}
         />
       </div>

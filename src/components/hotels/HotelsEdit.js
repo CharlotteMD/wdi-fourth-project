@@ -18,7 +18,7 @@ class HotelsEdit extends React.Component {
       .catch(err => console.log(err));
   }
 
-  handleChange = ({ target: { name, value } }) => {
+  handleHotelChange = ({ target: { name, value } }) => {
     const hotel = Object.assign({}, this.state.hotel, { [name]: value });
     this.setState({ hotel });
   }
@@ -39,12 +39,9 @@ class HotelsEdit extends React.Component {
         <HotelsForm
           history={this.props.history}
           handleSubmit={this.handleSubmit}
-          handleChange={this.handleChange}
+          handleHotelChange={this.handleHotelChange}
           hotel={this.state.hotel}
         />
-        <div>
-          <button className="save-button">Save</button>
-        </div>
       </div>
     );
   }

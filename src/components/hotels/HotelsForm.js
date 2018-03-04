@@ -1,6 +1,6 @@
 import React from 'react';
 
-function HotelsForm({ handleHotelChange, handleSubmit, hotel }) {
+function HotelsForm({ handleHotelChange, handleSubmit, hotel}) {
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
