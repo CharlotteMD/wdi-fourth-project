@@ -1,8 +1,11 @@
-
+body {
+  justify-content: center;
+}
 
 .card {
   text-align: center;
   // background-color: $light-color;
+  justify-content: center;
   flex-wrap: wrap;
   border: solid $emph-color 5px;
   border-radius: 5%;

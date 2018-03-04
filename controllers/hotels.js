@@ -58,6 +58,7 @@ function hotelsDelete(req, res, next) {
     .catch(next);
 }
 
+
 module.exports = {
   create: hotelsCreate,
   show: hotelsShow,

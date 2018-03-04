@@ -59,6 +59,8 @@ function auctionsDelete(req, res, next) {
     .catch(next);
 }
 
+
+
 module.exports = {
   index: auctionsIndex,
   create: auctionsCreate,

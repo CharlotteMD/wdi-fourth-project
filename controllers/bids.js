@@ -9,7 +9,7 @@ const Auction = require('../models/auctions');
 // }
 
 function bidsCreate(req, res, next) {
-
+  req.body.createdBy = req.currentUser;
   // if(req.file) req.body.image = req.file.filename;
 
   Auction

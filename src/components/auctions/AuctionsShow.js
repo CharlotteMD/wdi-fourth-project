@@ -5,6 +5,9 @@ import Axios from 'axios';
 
 import moment from 'moment';
 
+import Auth from '../../lib/Auth';
+
+
 class AuctionsShow extends React.Component {
   state = {
     auction: {
@@ -30,7 +33,7 @@ class AuctionsShow extends React.Component {
   componentDidMount() {
     Axios
       .get(`/api/auctions/${this.props.match.params.id}`)
-      .then(res => this.setState({ auction: res.data }))
+      .then(res => this.setState({ auction: res.data }), () => console.log(this.state))
       .catch(err => console.log(err));
   }
 
@@ -41,6 +44,20 @@ class AuctionsShow extends React.Component {
       .catch(err => console.log(err));
   }
 
+  handleBidChange = ({ target: { name, value } }) => {
+    const bid = Object.assign({}, this.state.bid, { [name]: value });
+    this.setState({ bid });
+  }
+
+  handleBidSubmit = (e) => {
+    e.preventDefault();
+
+    Axios
+      .put(`/api/auctions/${this.props.match.params.id}`, this.state.auction,
+        { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
+      .then(res => this.props.history.push(`/auctions/${res.data.id}`))
+      .catch(err => console.log(err));
+  }
 
 
   render() {
@@ -88,6 +105,31 @@ class AuctionsShow extends React.Component {
             <Link to={`/auctions/${this.state.auction._id}/edit`}>
               <button className="main-button">Edit Auction</button>
             </Link>
+
+
+            <h3>Make a bid</h3>
+
+            <form className="form-inline">
+              <div className="form-group mb-2">
+                <label htmlFor="staticEmail2" className="sr-only">Bid for this room</label>
+                <input type="number" className="form-control-number" id="bid"></input>
+                <button type="submit" className="btn btn-primary mb-2">Make Bid</button>
+              </div>
+            </form>
+
+            {/* {this.state.auction && this.state.auction.bid.map(bid => {
+              return(
+                <div key={bid.id}>
+
+                  <p>Current Highest Bid</p>
+                  <p>{bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
+
+                </div>
+              );
+            })} */}
+
+
+
 
 
           </ul>

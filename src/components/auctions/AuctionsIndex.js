@@ -41,7 +41,7 @@ class AuctionsIndex extends Component {
           <div className="auction-index">
             <h1>Current Auctions</h1>
             <div>
-              <div className="container">
+              {/* <div className="container"> */}
                 <div className="row">
 
                   { this.state.auctions.map((auction, i) => {
@@ -86,7 +86,7 @@ class AuctionsIndex extends Component {
                 </div>
               </div>
             </div>
-          </div>
+          // </div>
         );
       }
 }

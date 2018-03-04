@@ -57,26 +57,27 @@ class UserProfile extends React.Component {
 
             <h3>Your Hotels</h3>
 
-              <Link to="/hotels/new">
-                <button className="main-button">New Hotel</button>
-              </Link>
+            <Link to="/hotels/new">
+              <button className="main-button">New Hotel</button>
+            </Link>
 
-              {this.state.user && this.state.user.hotels.map(hotel => {
-                return(
-                  <div key={hotel._id}>
-                    <h4>{hotel.name}</h4>
-                    <a href={`/hotels/${hotel._id}`}>
-                      <img src={hotel.image}/>
-                    </a>
-                  </div>
-                );
-              })}
+            {this.state.user && this.state.user.hotels.map(hotel => {
+              return(
+                <div key={hotel._id}>
+                  <h4>{hotel.name}</h4>
+                  <a href={`/hotels/${hotel._id}`}>
+                    <img src={hotel.image}/>
+                  </a>
 
-            </div>
+                </div>
+              );
+            })}
+
+          </div>
 
 
-              {/* view your current auctions */}
-              {/*  create new auctions */}
+          {/* view your current auctions */}
+          {/*  create new auctions */}
 
 
 
