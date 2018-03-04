@@ -1,7 +1,6 @@
 .hotel-show, .auction-show {
   text-align: center;
   justify-content: center;
-
   flex-wrap: wrap;
   border: solid $emph-color 5px;
   border-radius: 5%;
@@ -25,6 +24,7 @@
     height: 500px;
     border-radius: 5%;
     border: $light-color solid 2px;
+    margin: 20px;
 
   }
 

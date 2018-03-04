@@ -64,7 +64,7 @@ class AuctionsShow extends React.Component {
   render() {
     return(
       <div className="auction-show">
-        <div className="sectionone">
+        {/* <div className="sectionone"> */}
           <ul>
 
 
@@ -103,9 +103,9 @@ class AuctionsShow extends React.Component {
               <button className="main-button">Edit Auction</button>
             </Link>
           </ul>
-        </div>
+        {/* </div> */}
 
-        <div className="sectiontwo">
+        {/* <div className="sectiontwo"> */}
 
           <h3>Your Bids</h3>
           {/* {this.state.auction && this.state.auction.bids.map(bid => {
@@ -124,10 +124,10 @@ class AuctionsShow extends React.Component {
           })} */}
 
 
-        </div>
+        {/* </div> */}
 
 
-        <div className="sectiontwo">
+        {/* <div className="sectiontwo"> */}
 
           <h3>Make a bid</h3>
 
@@ -146,7 +146,7 @@ class AuctionsShow extends React.Component {
             </div>
           </form>
 
-        </div>
+        {/* </div> */}
       </div>
 
     );
