@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Auth from '../../lib/Auth';
+
 
 import Axios from 'axios';
 
@@ -33,7 +35,8 @@ class HotelsShow extends React.Component {
 
   deleteHotel = () => {
     Axios
-      .delete(`/api/hotels/${this.state.hotel._id}`)
+      .delete(`/api/hotels/${this.props.match.params.id}`,
+        { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
       .then(() => this.props.history.push('/'))
       .catch(err => console.log(err));
   }

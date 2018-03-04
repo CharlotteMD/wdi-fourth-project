@@ -104,7 +104,7 @@ User
     ]);
   })
   .then(hotels => {
-    console.log(`${hotels.length} hotel created! 🏩`);
+    console.log(`${hotels.length} hotels created! 🏩`);
     return Auction.create([
       {
         hotel: hotels[0],

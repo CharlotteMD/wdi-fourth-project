@@ -21,6 +21,7 @@ class HotelsNew extends React.Component {
   handleHotelChange = ({ target: { name, value } }) => {
     const hotel = Object.assign({}, this.state.hotel, { [name]: value });
     this.setState({ hotel });
+    console.log('hotel info: ', hotel);
   }
 
   handleSubmit = (e) => {

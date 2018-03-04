@@ -39,8 +39,8 @@ class AuctionsShow extends React.Component {
 
   deleteAuction = () => {
     Axios
-      .delete(`/api/auctions/${this.props.match.params.id}`)
-      .then(() => this.props.history.push('/'))
+      .delete(`/api/auctions/${this.props.match.params.id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
+      .then(() => this.props.history.push('/auctions'))
       .catch(err => console.log(err));
   }
 
