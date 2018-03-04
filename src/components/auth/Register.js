@@ -65,7 +65,7 @@ class Register extends React.Component {
         .then(res => {
           console.log('the response from the api', res);
           Auth.setToken(res.data.token);
-          this.props.history.push('/');
+          this.props.history.push('/auctions');
         })
         .catch(err => console.log(err));
     }
