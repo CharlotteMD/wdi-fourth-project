@@ -29,6 +29,7 @@ class Register extends React.Component {
   handleUserChange = ({ target: { name, value }}) => {
     const user = Object.assign({}, this.state.user, { [name]: value });
     this.setState({ user });
+    console.log('user info: ', user);
   }
 
   handleHotelChange = ({ target: { name, value }}) => {
@@ -62,13 +63,15 @@ class Register extends React.Component {
       Axios
         .post('/api/register', this.state.user)
         .then(res => {
+          console.log('the response from the api', res);
           Auth.setToken(res.data.token);
           this.props.history.push('/');
-        });
+        })
+        .catch(err => console.log(err));
     }
 
 
-    console.log(this.state);
+    // console.log(this.state);
     // Axios.post('/api/register', this.state.user)
     // // 504 error, this isnt returning quick enough
     //   .then(res => {

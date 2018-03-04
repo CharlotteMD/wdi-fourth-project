@@ -107,20 +107,20 @@ class AuctionsShow extends React.Component {
         <div className="sectiontwo">
 
           <h3>Your Bids</h3>
-          {this.state.user && this.state.user.bids.map(bid => {
+          {/* {this.state.auction && this.state.auction.bids.map(bid => {
             return(
-              <div key={bid.id}>
-
-
-                <p>Your Bids</p>
-                <p>{bid.bids.filter(bid => bid.createdBy === this.state.user.id).reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
-
-                <p>Current Highest Bid</p>
-                <p>{bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
-
-              </div>
+              // <div key={bid.id}>
+              //
+              //
+              //   <p>Your Bids</p>
+              //   <p>{bid.bid.filter(bid => bid.createdBy === this.state.auction.id).reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
+              //
+              //   <p>Current Highest Bid</p>
+              //   <p>{bid.bid.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
+              //
+              // </div>
             );
-          })}
+          })} */}
 
 
         </div>
