@@ -30,7 +30,6 @@ class Register extends React.Component {
       .post(`/api/auctions/new/${this.props.match.params.hotelId}`, this.state.auction, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
       .then(res => {
         console.log('the response from the api', res);
-        Auth.setToken(res.data.token);
         // take url for hotel
         this.props.history.push(`/auctions/${res.data._id}`);
       })

@@ -45,6 +45,7 @@ class UsersEdit extends React.Component {
           handleUserChange={this.handleUserChange}
           user={this.state.user}
         />
+        <p>Please enter your password before saving</p>
       </div>
     );
   }

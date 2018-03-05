@@ -98,7 +98,9 @@ class UserProfile extends React.Component {
                 const newAuction = {
                   id: element.id,
                   hotelName: element.hotel.name,
-                  hotelImage: element.hotel.image
+                  hotelImage: element.hotel.image,
+                  hotelLink: element.hotel._id,
+                  auctionLink: element.id
                 };
                 accumulator.push(newAuction);
                 return accumulator;
@@ -106,8 +108,9 @@ class UserProfile extends React.Component {
             }, []).map(auction => {
               return(
                 <div key={auction.id}>
-                  <img src={auction.hotelImage}/>
-                  <p>{auction.hotelName}</p>
+                  <a href={`/auctions/${auction.auctionLink}`}><img src={auction.hotelImage}/></a>
+                  <a href={`/hotels/${auction.hotelLink}`}><p>{auction.hotelName}</p></a>
+
                 </div>
               );
             })
