@@ -66,7 +66,7 @@ class HotelsShow extends React.Component {
         })} */}
 
         {/* if user owns the hotel */}
-        <Link to="/auctions/new">
+        <Link to={`/auctions/new/${this.state.hotel._id}`}>
           <button className="main-button">New Auction</button>
         </Link>
 

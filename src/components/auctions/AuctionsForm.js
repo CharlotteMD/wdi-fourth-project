@@ -1,11 +1,47 @@
 import React from 'react';
 
-function AuctionsForm({ handleAuctionChange, handleSubmit, auction }) {
+function AuctionsForm({ handleAuctionChange, handleSubmit, auction, hotel }) {
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
 
         {/* Hotel is taken from the url from hotel show */}
+
+        {/* <div className="form-group">
+          <label htmlFor="hotel">Hotel</label>
+
+          { hotel.map(hotel => { return (
+
+          )})}
+          <select
+            className="form-control"
+            id="hotel"
+            name="hotel"
+            value={auction.hotel}
+            onChange={handleAuctionChange}
+          >
+            <option value="" disabled>Please Select</option>
+
+            <option value="{hotel.id}">{hotel.name}</option>
+
+
+          </select>
+        </div> */}
+
+
+        {/* {this.state.user && this.state.user.hotels.map(hotel => {
+          return(
+            <div key={hotel._id}>
+              <h4>{hotel.name}</h4>
+              <a href={`/hotels/${hotel._id}`}>
+                <img src={hotel.image}/>
+              </a>
+
+            </div>
+          );
+        })} */}
+
+
         <div className="form-group">
           <label htmlFor="reservePrice">Reserve Price</label>
           <input

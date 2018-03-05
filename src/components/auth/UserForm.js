@@ -8,7 +8,7 @@ const UserForm = ({ handleUserChange, handleSubmit, user }) => {
 
         <div className="form-group">
           <input
-            type="text"
+            type="email"
             name="email"
             placeholder="Email"
             onChange={handleUserChange}

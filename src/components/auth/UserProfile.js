@@ -46,7 +46,9 @@ class UserProfile extends React.Component {
 
           {this.state.user && <h2>Welcome back, {this.state.user.name}</h2>}
 
+
           <div>
+
             <Link to={`/users/${Auth.getPayload().userId}/edit`}>
               <button className="main-button">Edit Profile</button>
             </Link>
@@ -66,9 +68,9 @@ class UserProfile extends React.Component {
               <button className="main-button">New Hotel</button>
             </Link>
 
-            {this.state.user && this.state.user.hotels.map(hotel => {
+            {this.state.user && this.state.user.hotels.map((hotel, i) => {
               return(
-                <div key={hotel._id}>
+                <div key={i}>
                   <h4>{hotel.name}</h4>
                   <a href={`/hotels/${hotel._id}`}>
                     <img src={hotel.image}/>
@@ -89,9 +91,9 @@ class UserProfile extends React.Component {
           <div className="hotel-show">
 
 
-            {this.state.user && this.state.user.bids.map(bid => {
+            {this.state.user && this.state.user.bids.map((bid, i) => {
               return(
-                <div key={bid.id}>
+                <div key={i}>
 
 
                   {/* <a href={`/auctions/${bid.id}`}> */}

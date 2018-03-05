@@ -8,7 +8,8 @@ import AuctionsForm from './AuctionsForm';
 class AuctionsEdit extends React.Component {
   state = {
     auction: {
-    }
+    },
+    hotel: {}
   };
 
   componentDidMount() {
@@ -41,6 +42,7 @@ class AuctionsEdit extends React.Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           auction={this.state.auction}
+          hotel={this.state.hotel}
         />
         <div>
           <button className="save-button">Save</button>

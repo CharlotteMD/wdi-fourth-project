@@ -31,7 +31,7 @@ router.route('/hotels/new')
 router.route('/auctions')
   .get(auctions.index);
 
-router.route('/auctions/new')
+router.route('/auctions/new/:hotelId')
   .post(secureRoute, auctions.create);
 
 router.route('/auctions/:id')

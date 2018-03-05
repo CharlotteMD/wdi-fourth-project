@@ -29,10 +29,10 @@ userSchema.virtual('hotels'/* this is the name of the field that we are creating
   foreignField: 'admin' // is equal to `foreignField
 });
 
-userSchema.virtual('bids'/* this is the name of the field that we are creating */, {
+userSchema.virtual('auctions'/* this is the name of the field that we are creating */, {
   ref: 'Auction', // The model to use, conditional on the doc
   localField: '_id', // Find people or organizations where `localField`
-  foreignField: 'bids.createdBy' // is equal to `foreignField`
+  foreignField: 'hotel.admin' // is equal to `foreignField`
 });
 
 userSchema.pre('validate', function checkPassword(next) {

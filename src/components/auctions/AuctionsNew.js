@@ -27,7 +27,7 @@ class Register extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     Axios
-      .post('/api/auctions/new', this.state.auction, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
+      .post(`/api/auctions/new/${this.props.match.params.hotelId}`, this.state.auction, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
       .then(res => {
         console.log('the response from the api', res);
         Auth.setToken(res.data.token);
@@ -37,7 +37,7 @@ class Register extends React.Component {
       .catch(err => console.log(err));
   }
 
-  
+
 
 
   render() {

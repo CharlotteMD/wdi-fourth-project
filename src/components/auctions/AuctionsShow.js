@@ -39,7 +39,10 @@ class AuctionsShow extends React.Component {
   }
 
   findWinningBid() {
-    return this.state.auction.bids.reduce((prev, current) => (prev.amount > current.amount) ? prev : current);
+    return this.state.auction.bids.length !== 0 ?
+      this.state.auction.bids.reduce((prev, current) => (prev.amount > current.amount) ? prev : current)
+      :
+      false;
   }
 
   findCurrentUserTopBid() {
@@ -68,7 +71,7 @@ class AuctionsShow extends React.Component {
   handleBidSubmit = (e) => {
     e.preventDefault();
 
-    if(this.state.newBid.amount > this.findWinningBid().amount) {
+    const request = () => {
       Axios
         .post(`/api/auctions/${this.props.match.params.id}/bids`, this.state.newBid,
           { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
@@ -77,8 +80,24 @@ class AuctionsShow extends React.Component {
           this.setState({ auction, newBid: { amount: '' } });
         })
         .catch(err => console.log(err));
+    };
+
+    if(this.findWinningBid()) {
+
+      if(this.state.newBid.amount > this.findWinningBid().amount) {
+        request();
+      } else {
+        console.log('your bid is lower than the highest bid');
+      }
+
     } else {
-      console.log('you bid is lower than the winning amount');
+
+      if(this.state.newBid.amount > this.state.auction.reservePrice) {
+        request();
+      } else {
+        console.log('your bid is lower than the reserve price');
+      }
+
     }
   }
 
@@ -157,12 +176,12 @@ class AuctionsShow extends React.Component {
                 </div>
               )
             }
+
+            { this.state.auction.hotel.admin === Auth.getPayload().userId &&
+              <p>The highest on this auction is currently {this.findWinningBid().amount}</p>
+            }
           </div>
-        }
 
-        { this.state.auction.hotel.admin === Auth.getPayload().userId &&
-
-        <p>The highest on this auction is currently {this.findWinningBid().amount}</p>
         }
 
       </div>

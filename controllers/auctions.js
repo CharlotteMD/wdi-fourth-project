@@ -10,6 +10,8 @@ function auctionsIndex(req, res, next) {
 }
 
 function auctionsCreate(req, res, next) {
+  req.body.hotel = req.params.hotelId;
+
   Auction
     .create(req.body)
     .then(auction => res.status(201).json(auction))

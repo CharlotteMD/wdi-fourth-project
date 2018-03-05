@@ -8,16 +8,14 @@ import UserForm from './UserForm';
 class UsersEdit extends React.Component {
   state = {
     user: {
-      name: '',
-      email: '',
-      password: '',
-      passwordConfirmation: ''
+
     }
   };
 
   componentDidMount() {
+    console.log('working');
     Axios
-      .get(`/api/users/${this.props.match.params.id}`)
+      .get(`/api/users/${Auth.getPayload().userId}`)
       .then(res => this.setState({ user: res.data }))
       .catch(err => console.log(err));
   }
@@ -38,6 +36,7 @@ class UsersEdit extends React.Component {
   }
 
   render() {
+    console.log(this.state.user);
     return (
       <div>
         <h1>Edit your profile</h1>

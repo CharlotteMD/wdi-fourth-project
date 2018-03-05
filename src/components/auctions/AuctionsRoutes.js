@@ -10,7 +10,7 @@ const AuctionsRoutes = () => {
   return (
     <Switch>
       <Route exact path="/auctions" component={AuctionsIndex} />
-      <Route exact path="/auctions/new" component={AuctionsNew} />
+      <Route exact path="/auctions/new/:hotelId" component={AuctionsNew} />
       <Route path="/auctions/:id/edit" component={AuctionsEdit} />
       <Route path="/auctions/:id" component={AuctionsShow} />
     </Switch>
