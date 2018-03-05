@@ -58,7 +58,7 @@ class Register extends React.Component {
 
           Axios
             .post('/api/hotels', this.state.hotel, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
-            .then(res => this.props.history.push(`/hotels/${res.data._id}`));
+            .then(this.props.history.push('/auctions'));
         });
     } else {
       Axios

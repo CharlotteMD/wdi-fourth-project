@@ -3,7 +3,8 @@ import React from 'react';
 function HotelsForm({ handleHotelChange, handleSubmit, hotel}) {
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      {hotel && <form onSubmit={handleSubmit}>
+
         <div className="form-group">
           <input
             type="text"
@@ -123,7 +124,7 @@ function HotelsForm({ handleHotelChange, handleSubmit, hotel}) {
           </select>
         </div>
         <button className="main-button">Submit</button>
-      </form>
+      </form>}
     </div>
   );
 }

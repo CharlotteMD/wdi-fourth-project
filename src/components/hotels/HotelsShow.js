@@ -74,11 +74,11 @@ class HotelsShow extends React.Component {
 
         { Auth.isAuthenticated() && (this.state.hotel.admin === Auth.getPayload().userId) &&
           <div>
-            <Link to={`/auctions/new/${this.state.hotel._id}`}>
+            <Link to={`/auctions/new/${this.state.hotel.id}`}>
               <button className="main-button">New Auction</button>
             </Link>
 
-            <Link to={`/hotels/${this.state.hotel._id}/edit`}>
+            <Link to={`/hotels/${this.state.hotel.id}/edit`}>
               <button className="main-button">Edit Hotel</button>
             </Link>
 
@@ -98,10 +98,12 @@ class HotelsShow extends React.Component {
 
                 <div key={i} className="col-md-6" >
                   <div className="details">
-                    <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
                     <Link to={`/auctions/${auction.id}`}>
-                      {auction.board}
+                      <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
                     </Link>
+                    <p>{auction.board}</p>
+
+
                   </div>
                 </div>
 

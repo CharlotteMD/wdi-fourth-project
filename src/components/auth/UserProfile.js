@@ -73,7 +73,7 @@ class UserProfile extends React.Component {
               return(
                 <div key={i}>
                   <h4>{hotel.name}</h4>
-                  <a href={`/hotels/${hotel._id}`}>
+                  <a href={`/hotels/${hotel.id}`}>
                     <img src={hotel.image}/>
                   </a>
 
