@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Auth from '../../lib/Auth';
-
+import moment from 'moment';
 
 import Axios from 'axios';
 
@@ -84,23 +84,19 @@ class HotelsShow extends React.Component {
         }
 
 
-
-
-
-
-
         <div className="currentAuctions">
 
           {this.state.hotel.auctions &&  this.state.hotel.auctions.map((auction, i) => {
             return(
               <div key={i}>
-                <p>{auction.checkInDate}</p>
+                <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
                 <Link to={`/auctions/${auction.id}`}>
                   {auction.board}
                 </Link>
               </div>
             );
           })}
+
 
         </div>
 
