@@ -46,7 +46,7 @@ class AuctionsIndex extends Component {
                 <div className="row">
 
                   { this.state.auctions.map((auction, i) => {
-                    return <div className="col-md-4" key={i}>
+                    return <div className="col-md-4 col-sm-6 col-xs-12" key={i}>
                       <div className="card">
                         <ul>
                           <li>

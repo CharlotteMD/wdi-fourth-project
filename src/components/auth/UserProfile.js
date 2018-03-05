@@ -90,7 +90,9 @@ class UserProfile extends React.Component {
 
 
 
-          <div className="hotel-show">
+          <div className="hotel-show bids">
+
+            <div className="bids">
             <h3>Your Bids</h3>
 
             {this.state.user && this.state.user.bids.length === 0 &&
@@ -130,6 +132,7 @@ class UserProfile extends React.Component {
             })
 
             }
+          </div>
           </div>
 
         </div>
