@@ -123,22 +123,21 @@ class AuctionsShow extends React.Component {
   render() {
     return(
       <div className="auction-show">
-        <ul>
 
-          <li>
+
+
             <a href={`/hotels/${this.state.auction.hotel._id}`}>
               <h2>{this.state.auction.hotel.name}</h2>
             </a>
-          </li>
 
-          <li>
+
+
             <img src={this.state.auction.hotel.image}/>
-          </li>
 
-          <li>
+
+
             <p>{this.state.auction.details}</p>
-          </li>
-        </ul>
+          
 
 
         <div className="details">

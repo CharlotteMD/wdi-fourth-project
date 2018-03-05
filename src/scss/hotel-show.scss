@@ -9,7 +9,8 @@
   width: 700px;
   height: auto;
   padding: 5px;
-  margin: 20px 10px 0px 10px;
+  margin: 0 auto;
+  // margin: 20px 10px 0px 10px;
   box-shadow: 10px 10px 5px $header-color;
 
   h2 {
@@ -44,6 +45,13 @@
     border-radius: 3%;
   }
 
+  p {
+    span {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
 .details {
   margin: 0 auto;
   justify-content: center;
@@ -53,12 +61,7 @@
   text-align: center;
   color: $text-color;
   padding: 5px;
-    p {
-      span {
-        font-weight: bold;
-        text-decoration: underline;
-      }
-    }
+
 
 
 }
@@ -66,12 +69,14 @@
   ul {
     list-style: none;
     padding-left: 0px;
+    display: flex;
 
     li {
       // text-align: center;
       color: $text-color;
       padding-left: 0px;
       margin: 20px;
+      flex-wrap: wrap;
 
 
     }
