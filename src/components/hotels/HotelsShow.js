@@ -55,18 +55,22 @@ class HotelsShow extends React.Component {
 
         <p className="info">{this.state.hotel.info}</p>
 
+
         <p>Facilities:</p>
 
         { this.state.hotel.amenities.map((amenity, i) => {
           return(
 
-            <div key={i}>
+            <div key={i} className="facilities" >
               <ul>
-                <li><p>{amenity}</p></li>
+                <li>{amenity}</li>
               </ul>
             </div>
+
+
           );
         })}
+
 
 
         { Auth.isAuthenticated() && (this.state.hotel.admin === Auth.getPayload().userId) &&
@@ -92,11 +96,13 @@ class HotelsShow extends React.Component {
             {this.state.hotel.auctions &&  this.state.hotel.auctions.map((auction, i) => {
               return(
 
-                <div key={i} className="col-md-6">
-                  <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
-                  <Link to={`/auctions/${auction.id}`}>
-                    {auction.board}
-                  </Link>
+                <div key={i} className="col-md-6" >
+                  <div className="details">
+                    <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
+                    <Link to={`/auctions/${auction.id}`}>
+                      {auction.board}
+                    </Link>
+                  </div>
                 </div>
 
               );

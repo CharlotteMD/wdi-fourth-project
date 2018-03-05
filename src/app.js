@@ -27,13 +27,14 @@ class App extends React.Component {
           <div className="title">
 
             <header>
-              <Navbar />
-              {/* <Link to="/"><h1>GetARoom.com</h1></Link> */}
-              {/* <h2>Pay what you want for the best hotels in London</h2> */}
 
+              <Navbar />
+              {/* <h1>GetARoom.com</h1> */}
+              {/* <h2>Pay what you want for the best hotels in London</h2> */}
+              <Link to="/"><h1>Get A Room</h1></Link>
             </header>
 
-            <a className="app-nav" href="/auctions">View Current Auctions</a>
+            <a className="app-nav" href="/auctions"><button>View Current Auctions</button></a>
 
           </div>
 

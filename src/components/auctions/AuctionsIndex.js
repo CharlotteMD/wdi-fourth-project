@@ -61,13 +61,10 @@ class AuctionsIndex extends Component {
                             </li>
                             {' '}
                             <li>
-                              From: {moment(auction.checkInDate).format('do MMMM, YYYY')}, for {auction.nights} nights
+                              From: <span>{moment(auction.checkInDate).format('do MMMM, YYYY')}</span>, for <span>{auction.nights}</span> nights
                             </li>
                             <li>
-                              Reserve Price: £{auction.reservePrice}
-                            </li>
-                            <li>
-                              {auction.maxGuests} Guests
+                              Max <span>{auction.maxGuests}</span> Guests
                             </li>
 
                             <div className="showlink">

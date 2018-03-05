@@ -138,19 +138,24 @@ class AuctionsShow extends React.Component {
           <li>
             <p>{this.state.auction.details}</p>
           </li>
-
-          <li>
-            From: {moment(this.state.auction.checkInDate).format('do MMMM, YYYY')}, for {this.state.auction.nights} nights
-          </li>
-
-          <li>
-            Maximum of {this.state.auction.maxGuests} Guests
-          </li>
-
-          <li>
-            {this.state.auction.board}
-          </li>
         </ul>
+
+
+        <div className="details">
+
+          <p>
+            From: <span>{moment(this.state.auction.checkInDate).format('do MMMM, YYYY')}</span>, for <span> {this.state.auction.nights}</span> nights
+          </p>
+
+          <p>
+            Maximum of {this.state.auction.maxGuests} Guests
+          </p>
+
+          <p>
+            {this.state.auction.board}
+          </p>
+        </div>
+
 
         { Auth.isAuthenticated() &&
           <div>

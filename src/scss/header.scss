@@ -1,14 +1,29 @@
 .title {
-
+background-image: url('https://images.unsplash.com/photo-1505492537188-de71a52767cb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b4bbefaa3c24a65fcf0d20ec3872fe1a&auto=format&fit=crop&w=600&q=60');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+padding: 50px;
+margin: 10px 0px;
   a {
     display: block;
     text-align: center;
     text-decoration: none;
-    color: $header-color;
+    color: $emph-color;
+    font-size: 30px;
+    font-weight: 900px;
     }
+    a:hover {
+      color: $light-color;
+      text-decoration: none;
+    }
+
 
   h1 {
     font-weight: 900;
+    text-decoration: none;
+    font-size: 160px;
+    color: $emph-color;
   }
 
   .app-nav {
@@ -17,30 +32,32 @@
     margin-bottom: 10px;
   }
   header {
-    background-image: url('/assets/images/GetARoom.png');
+    // background-image: url('/assets/images/GetARoom.png');
     // padding-top: 300px;
     // padding-bottom: 10px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: contain;
     // border-radius: 15%;
-    height: 200px;
-    margin-top: -30px;
+    // height: 200px;
+    // margin-top: -30px;
 
     .navbar {
       margin-top: 30px;
+      justify-content: center;
 
         ul {
           list-style-type: none;
-          margin: 0;
-          padding: 0;
+          // margin: 0;
+          // padding: 0;
           overflow: hidden;
+          padding-left: 0px;
 
 
           li {
             float: left;
             text-align: center;
-
+            // padding-left: 0px;
 
 
         	}

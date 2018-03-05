@@ -1,3 +1,5 @@
+
+
 .hotel-show, .auction-show {
   text-align: center;
   justify-content: center;
@@ -42,15 +44,36 @@
     border-radius: 3%;
   }
 
+.details {
+  margin: 0 auto;
+  justify-content: center;
+  border: solid $light-color 3px;
+  border-radius: 5%;
+  max-width: 300px;
+  text-align: center;
+  color: $text-color;
+  padding: 5px;
+    p {
+      span {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
 
+
+}
 
   ul {
     list-style: none;
-    // text-align: center;
+    padding-left: 0px;
 
     li {
       // text-align: center;
       color: $text-color;
+      padding-left: 0px;
+      margin: 20px;
+
+
     }
   }
 
@@ -73,5 +96,15 @@
     max-width: 50%;
     height: auto;
     justify-content: center;
+  }
+}
+
+.facilities {
+  ul {
+    text-align: center;
+    li {
+      display: inline-block;
+    }
+
   }
 }
