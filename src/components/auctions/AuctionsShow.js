@@ -126,17 +126,17 @@ class AuctionsShow extends React.Component {
 
 
 
-            <a href={`/hotels/${this.state.auction.hotel.id}`}>
-              <h2>{this.state.auction.hotel.name}</h2>
-            </a>
+        <a href={`/hotels/${this.state.auction.hotel.id}`}>
+          <h2>{this.state.auction.hotel.name}</h2>
+        </a>
 
 
 
-            <img src={this.state.auction.hotel.image}/>
+        <img src={this.state.auction.hotel.image}/>
 
 
 
-            <p>{this.state.auction.details}</p>
+        <p>{this.state.auction.details}</p>
 
 
 
@@ -153,7 +153,7 @@ class AuctionsShow extends React.Component {
           <p>
             {this.state.auction.board}
           </p>
-      
+
         </div>
 
 

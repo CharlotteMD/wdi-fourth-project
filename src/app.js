@@ -6,6 +6,7 @@ import 'bootstrap-css-only';
 import './scss/style.scss';
 
 import Navbar from './components/utility/Navbar';
+import Footer from './components/utility/Footer';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import UserProfile from './components/auth/UserProfile';
@@ -14,7 +15,7 @@ import UserEdit from './components/auth/UserEdit';
 import AuctionsRoutes from './components/auctions/AuctionsRoutes';
 import HotelsRoutes from './components/hotels/HotelsRoutes';
 
-import Auth from './lib/Auth';
+// import Auth from './lib/Auth';
 
 
 
@@ -48,7 +49,7 @@ class App extends React.Component {
           <Route exact path="/users/:id" component={UserProfile}/>
 
 
-
+          <Footer />
 
         </div>
       </Router>

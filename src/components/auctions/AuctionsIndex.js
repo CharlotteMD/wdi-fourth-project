@@ -40,42 +40,39 @@ class AuctionsIndex extends Component {
         return(
           <div className="auction-index">
             <div className="container">
-            <h1>Current Auctions</h1>
-            <div>
+              <h1>Current Auctions</h1>
+              <div>
 
                 <div className="row">
 
                   { this.state.auctions.map((auction, i) => {
-                    return <div key={i}>
-                      <div className="col-sm">
-                        <div className="card">
+                    return <div className="col-md-4" key={i}>
+                      <div className="card">
+                        <ul>
+                          <li>
+                            <a href={`hotels/${auction.hotel.id}`} className="hotelShow">
+                              <h3>{auction.hotel.name}</h3>
+                            </a>
+                          </li>
+                          <li>
+                            <img src={auction.hotel.image} alt={auction.hotel.name} >
+                            </img>
+                          </li>
+                          {' '}
+                          <li>
+                            From: <span>{moment(auction.checkInDate).format('do MMMM, YYYY')}</span>, for <span>{auction.nights}</span> nights
+                          </li>
+                          <li>
+                            Max <span>{auction.maxGuests}</span> Guests
+                          </li>
 
-                          <ul>
-                            <li>
-                              <a href={`hotels/${auction.hotel.id}`} className="hotelShow">
-                                <h3>{auction.hotel.name}</h3>
-                              </a>
-                            </li>
-                            <li>
-                              <img src={auction.hotel.image} alt={auction.hotel.name} >
-                              </img>
-                            </li>
-                            {' '}
-                            <li>
-                              From: <span>{moment(auction.checkInDate).format('do MMMM, YYYY')}</span>, for <span>{auction.nights}</span> nights
-                            </li>
-                            <li>
-                              Max <span>{auction.maxGuests}</span> Guests
-                            </li>
+                          <div className="showlink">
+                            <Link to={`/auctions/${auction.id}`}>
+                              <button>View Auction</button>
+                            </Link>
+                          </div>
 
-                            <div className="showlink">
-                              <Link to={`/auctions/${auction.id}`}>
-                                <button>View Auction</button>
-                              </Link>
-                            </div>
-
-                          </ul>
-                        </div>
+                        </ul>
                       </div>
                     </div>;
                   })}

@@ -18,8 +18,7 @@ body {
   flex-wrap: wrap;
   border: solid $emph-color 5px;
   border-radius: 5%;
-  width: 300px;
-  height: 320px;
+  height: calc(100% - 30px);
   padding: 5px;
   margin: 20px 10px 0px 10px;
   box-shadow: 10px 10px 5px $header-color;
