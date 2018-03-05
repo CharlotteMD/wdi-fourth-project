@@ -89,8 +89,16 @@ class UserProfile extends React.Component {
 
 
 
+
           <div className="hotel-show">
             <h3>Your Bids</h3>
+
+            {this.state.user && this.state.user.bids.length === 0 &&
+              <p>You have not bid on anything yet.</p>
+            }
+
+
+
 
             {this.state.user && this.state.user.bids.reduce((accumulator, element) => {
               if(accumulator.some(auction => auction.id === element.id)) {
