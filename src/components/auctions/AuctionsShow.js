@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
 import Axios from 'axios';
 
@@ -26,7 +27,8 @@ class AuctionsShow extends React.Component {
     },
     newBid: {
       amount: ''
-    }
+    },
+    bidMessage: null
   }
 
   // let date = (moment(checkInDate).format('LL'));
@@ -50,6 +52,14 @@ class AuctionsShow extends React.Component {
       this.state.auction.bids.filter(bid => bid.createdBy === Auth.getPayload().userId).reduce((prev, current) => (prev.amount > current.amount) ? prev : current)
       :
       false;
+  }
+
+  removeMessage = () => {
+    this.setState(prevState => {
+      const newState = prevState;
+      newState.bidMessage = null;
+      return newState;
+    });
   }
 
   isCurrentUserWinning() {
@@ -87,7 +97,14 @@ class AuctionsShow extends React.Component {
       if(this.state.newBid.amount > this.findWinningBid().amount) {
         request();
       } else {
-        console.log('your bid is lower than the highest bid');
+        this.setState(prevState => {
+          console.log('prevState => ', prevState);
+          const newState = prevState;
+          newState.bidMessage = 'Your bid is not the highest';
+          console.log('newState => ', newState);
+          return newState;
+        }, () => console.log('message being set, other highter bid', this.state));
+        setTimeout(this.removeMessage, 5000);
       }
 
     } else {
@@ -95,7 +112,8 @@ class AuctionsShow extends React.Component {
       if(this.state.newBid.amount > this.state.auction.reservePrice) {
         request();
       } else {
-        console.log('your bid is lower than the reserve price');
+        this.setState({bidMessage: 'Your bid is lower than the reserve price'}, () => console.log('message being set, doesn\'t meet reserve'));
+        setTimeout(this.removeMessage, 5000);
       }
 
     }
@@ -149,6 +167,8 @@ class AuctionsShow extends React.Component {
                   value={this.state.newBid.amount}
                 />
                 <button type="submit" className="btn btn-primary mb-2">Make Bid</button>
+                { this.state.bidMessage &&
+                <p>{this.state.bidMessage}</p>}
               </div>
             </form>
           </div>

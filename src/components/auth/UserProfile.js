@@ -100,7 +100,8 @@ class UserProfile extends React.Component {
                   hotelName: element.hotel.name,
                   hotelImage: element.hotel.image,
                   hotelLink: element.hotel._id,
-                  auctionLink: element.id
+                  auctionLink: element.id,
+                  auctionDates: element.checkInDate
                 };
                 accumulator.push(newAuction);
                 return accumulator;
@@ -110,6 +111,9 @@ class UserProfile extends React.Component {
                 <div key={auction.id}>
                   <a href={`/auctions/${auction.auctionLink}`}><img src={auction.hotelImage}/></a>
                   <a href={`/hotels/${auction.hotelLink}`}><p>{auction.hotelName}</p></a>
+                  {/* <p>{auction.auctionDates}</p>
+
+                  {moment(this.state.auction.checkInDate).format('do MMMM, YYYY')}, for {this.state.auction.nights} nights */}
 
                 </div>
               );
@@ -117,12 +121,6 @@ class UserProfile extends React.Component {
 
             }
           </div>
-
-
-
-
-
-
 
         </div>
 
