@@ -91,42 +91,28 @@ class UserProfile extends React.Component {
           <div className="hotel-show">
 
 
-            {this.state.user && this.state.user.bids.map((bid, i) => {
+            {this.state.user && this.state.user.bids.reduce((accumulator, element) => {
+              if(accumulator.some(auction => auction.id === element.id)) {
+                return accumulator;
+              } else {
+                const newAuction = {
+                  id: element.id,
+                  hotelName: element.hotel.name,
+                  hotelImage: element.hotel.image
+                };
+                accumulator.push(newAuction);
+                return accumulator;
+              }
+            }, []).map(auction => {
               return(
-                <div key={i}>
-
-
-                  {/* <a href={`/auctions/${bid.id}`}> */}
-                  <h4>{bid.hotel.name}</h4>
-                  <img src={bid.hotel.image}/>
-                  {/* </a> */}
-
-
-                  {/* write some code to show whether you're winning in css and if you are yet to bid on anything, go to auctions index */}
-                  <p>Your Bid</p>
-                  <p>{bid.bids.filter(bid => bid.createdBy === this.state.user.id).reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}</p>
-
-                  {bid.bids.reduce((topBid, bid) => topBid > bid.bid ? topBid : bid.bid, 0)}
-
-                  {/* { bid.bid > topBid &&
-                    <p>You are currently the highest bidder!</p>}
-
-                  { bid.bid < topBid &&
-                    <p>You are not currently the highest bidder! Why not bid again?</p> */}
-
-
-
-                  {/* } */}
-
-
-
-
-
-                  <p></p>
-
+                <div key={auction.id}>
+                  <img src={auction.hotelImage}/>
+                  <p>{auction.hotelName}</p>
                 </div>
               );
-            })}
+            })
+
+            }
           </div>
 
 

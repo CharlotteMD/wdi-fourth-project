@@ -7,15 +7,14 @@ import UserForm from './UserForm';
 
 class UsersEdit extends React.Component {
   state = {
-    user: {
-
-    }
+    user: null
   };
 
   componentDidMount() {
     console.log('working');
     Axios
-      .get(`/api/users/${Auth.getPayload().userId}`)
+      .get(`/api/users/${Auth.getPayload().userId}`,
+        { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
       .then(res => this.setState({ user: res.data }))
       .catch(err => console.log(err));
   }
@@ -43,7 +42,7 @@ class UsersEdit extends React.Component {
         <UserForm
           history={this.props.history}
           handleSubmit={this.handleSubmit}
-          handleChange={this.handleUserChange}
+          handleUserChange={this.handleUserChange}
           user={this.state.user}
         />
       </div>

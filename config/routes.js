@@ -25,7 +25,7 @@ router.route('/hotels/:id')
   .put(secureRoute, hotels.update)
   .delete(secureRoute, hotels.delete);
 
-router.route('/hotels/new')
+router.route('/hotels')
   .post(secureRoute, hotels.create);
 
 router.route('/auctions')

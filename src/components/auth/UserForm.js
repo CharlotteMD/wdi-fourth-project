@@ -4,7 +4,7 @@ import React from 'react';
 const UserForm = ({ handleUserChange, handleSubmit, user }) => {
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      {user && <form onSubmit={handleSubmit}>
 
         <div className="form-group">
           <input
@@ -47,7 +47,7 @@ const UserForm = ({ handleUserChange, handleSubmit, user }) => {
           />
         </div>
         <button className="main-button">Save</button>
-      </form>
+      </form>}
     </div>
   );
 };
