@@ -92,16 +92,20 @@ class HotelsShow extends React.Component {
 
         <div className="currentAuctions">
           <h3>Current Auctions</h3>
+          <div className="yeshover">
           <div className="row">
+
             {this.state.hotel.auctions &&  this.state.hotel.auctions.map((auction, i) => {
               return(
 
                 <div key={i} className="col-md-6" >
                   <div className="details">
-                    <Link to={`/auctions/${auction.id}`}>
+                    <a href={`/auctions/${auction.id}`}>
+
                       <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
-                    </Link>
-                    <p>{auction.board}</p>
+
+                      <p>{auction.board}</p>
+                    </a>
 
 
                   </div>
@@ -109,6 +113,7 @@ class HotelsShow extends React.Component {
 
               );
             })}
+          </div>
           </div>
 
         </div>

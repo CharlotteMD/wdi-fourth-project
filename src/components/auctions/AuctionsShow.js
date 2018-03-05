@@ -126,7 +126,7 @@ class AuctionsShow extends React.Component {
 
 
 
-            <a href={`/hotels/${this.state.auction.hotel._id}`}>
+            <a href={`/hotels/${this.state.auction.hotel.id}`}>
               <h2>{this.state.auction.hotel.name}</h2>
             </a>
 
@@ -137,7 +137,7 @@ class AuctionsShow extends React.Component {
 
 
             <p>{this.state.auction.details}</p>
-          
+
 
 
         <div className="details">
@@ -153,6 +153,7 @@ class AuctionsShow extends React.Component {
           <p>
             {this.state.auction.board}
           </p>
+      
         </div>
 
 
@@ -170,9 +171,9 @@ class AuctionsShow extends React.Component {
                   onChange={this.handleBidChange}
                   value={this.state.newBid.amount}
                 />
-                <button type="submit" className="btn btn-primary mb-2">Make Bid</button>
+                <button type="submit" >Make Bid</button>
                 { this.state.bidMessage &&
-                <p>{this.state.bidMessage}</p>}
+                <p className="bidMessage">{this.state.bidMessage}</p>}
               </div>
             </form>
           </div>
