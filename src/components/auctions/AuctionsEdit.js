@@ -9,7 +9,8 @@ class AuctionsEdit extends React.Component {
   state = {
     auction: {
     },
-    hotel: {}
+    hotel: {},
+    errors: {}
   };
 
   componentDidMount() {
@@ -21,7 +22,8 @@ class AuctionsEdit extends React.Component {
 
   handleChange = ({ target: { name, value } }) => {
     const auction = Object.assign({}, this.state.auction, { [name]: value });
-    this.setState({ auction });
+    const errors = Object.assign({}, this.state.errors, { [name]: '' });
+    this.setState({ auction, errors });
   }
 
   handleSubmit = (e) => {
@@ -31,7 +33,7 @@ class AuctionsEdit extends React.Component {
       .put(`/api/auctions/${this.props.match.params.id}`, this.state.auction,
         { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
       .then(res => this.props.history.push(`/auctions/${res.data.id}`))
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
   render() {
@@ -43,6 +45,7 @@ class AuctionsEdit extends React.Component {
           handleChange={this.handleChange}
           auction={this.state.auction}
           hotel={this.state.hotel}
+          errors={this.state.errors}
         />
         <div>
           <button className="save-button">Save</button>

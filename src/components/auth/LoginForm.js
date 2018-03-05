@@ -1,6 +1,8 @@
 import React from 'react';
 
-const LoginForm = ({ handleChange, handleSubmit, user }) => { // how can i make the same form use either hotel or user details?
+const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
+  const formIsInvalid = Object.keys(errors).some(key => errors[key]);
+
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
@@ -13,7 +15,9 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => { // how can i make 
             value={user.email}
             className="form-control"
           />
+          { errors.email && <p>{errors.email}</p>}
         </div>
+
         <div className="form-group">
           <input
             type="password"
@@ -23,8 +27,10 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => { // how can i make 
             value={user.password}
             className="form-control"
           />
+          { errors.password && <p>{errors.password}</p>}
         </div>
-        <button className="main-button">Login</button>
+
+        <button disabled={formIsInvalid} className="main-button">Login</button>
       </form>
     </div>
   );

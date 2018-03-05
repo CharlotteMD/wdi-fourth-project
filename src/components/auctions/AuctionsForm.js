@@ -1,46 +1,12 @@
 import React from 'react';
 
-function AuctionsForm({ handleAuctionChange, handleSubmit, auction, hotel }) {
+const AuctionsForm = ({ handleAuctionChange, handleSubmit, auction, errors }) => {
+
+  const formIsInvalid = Object.keys(errors).some(key => errors[key]);
+
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
-
-        {/* Hotel is taken from the url from hotel show */}
-
-        {/* <div className="form-group">
-          <label htmlFor="hotel">Hotel</label>
-
-          { hotel.map(hotel => { return (
-
-          )})}
-          <select
-            className="form-control"
-            id="hotel"
-            name="hotel"
-            value={auction.hotel}
-            onChange={handleAuctionChange}
-          >
-            <option value="" disabled>Please Select</option>
-
-            <option value="{hotel.id}">{hotel.name}</option>
-
-
-          </select>
-        </div> */}
-
-
-        {/* {this.state.user && this.state.user.hotels.map(hotel => {
-          return(
-            <div key={hotel._id}>
-              <h4>{hotel.name}</h4>
-              <a href={`/hotels/${hotel._id}`}>
-                <img src={hotel.image}/>
-              </a>
-
-            </div>
-          );
-        })} */}
-
 
         <div className="form-group">
           <label htmlFor="reservePrice">Reserve Price</label>
@@ -53,6 +19,7 @@ function AuctionsForm({ handleAuctionChange, handleSubmit, auction, hotel }) {
             className="form-control"
           />
         </div>
+        { errors.reservePrice && <p>{errors.reservePrice}</p>}
 
         <div className="form-group">
           <label htmlFor="checkInDate">Check in Date</label>
@@ -65,6 +32,7 @@ function AuctionsForm({ handleAuctionChange, handleSubmit, auction, hotel }) {
             className="form-control"
           />
         </div>
+        { errors.checkInDate && <p>{errors.checkInDate}</p>}
 
         <div className="form-group">
           <label htmlFor="nights">Number of nights</label>
@@ -77,6 +45,7 @@ function AuctionsForm({ handleAuctionChange, handleSubmit, auction, hotel }) {
             className="form-control"
           />
         </div>
+        { errors.nights && <p>{errors.nights}</p>}
 
         <div className="form-group">
           <label htmlFor="maxGuests">Max number of guests</label>
@@ -89,6 +58,7 @@ function AuctionsForm({ handleAuctionChange, handleSubmit, auction, hotel }) {
             className="form-control"
           />
         </div>
+        { errors.maxGuests && <p>{errors.maxGuests}</p>}
 
         <div className="form-group">
           <label htmlFor="board">Board Type</label>
@@ -107,6 +77,7 @@ function AuctionsForm({ handleAuctionChange, handleSubmit, auction, hotel }) {
 
           </select>
         </div>
+        { errors.board && <p>{errors.board}</p>}
 
         <div className="form-group">
           <label htmlFor="details">Details of your auction</label>
@@ -119,10 +90,12 @@ function AuctionsForm({ handleAuctionChange, handleSubmit, auction, hotel }) {
             className="form-control"
           />
         </div>
-        <button className="main-button">Create</button>
+        { errors.details && <p>{errors.details}</p>}
+
+        <button disabled={formIsInvalid} className="main-button">Create</button>
       </form>
     </div>
   );
-}
+};
 
 export default AuctionsForm;

@@ -15,12 +15,14 @@ class Register extends React.Component {
       maxGuests: '',
       board: '',
       details: ''
-    }
+    },
+    errors: {}
   };
 
   handleAuctionChange = ({ target: { name, value }}) => {
     const auction = Object.assign({}, this.state.auction, { [name]: value });
-    this.setState({ auction });
+    const errors = Object.assign({}, this.state.errors, { [name]: '' });
+    this.setState({ auction, errors });
     console.log('auction info: ', auction);
   }
 
@@ -33,7 +35,7 @@ class Register extends React.Component {
         // take url for hotel
         (this.props.history.push(`/users/${Auth.getPayload().userId}`));
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
 
@@ -47,6 +49,7 @@ class Register extends React.Component {
           auction={this.state.auction}
           handleAuctionChange={this.handleAuctionChange}
           handleSubmit={this.handleSubmit}
+          errors={this.state.errors}
         />
       </div>
     );

@@ -10,13 +10,15 @@ class userLogin extends React.Component {
     user: {
       email: '',
       password: ''
-    }
+    },
+    errors: {}
   };
 
   handleChange = ({ target: { name, value } }) => {
     console.log('working');
     const user = Object.assign({}, this.state.user, { [name]: value });
-    this.setState({ user });
+    const errors = Object.assign({}, this.state.errors, { [name]: '' });
+    this.setState({ user, errors });
   }
 
   handleSubmit = (e) => {
@@ -27,7 +29,7 @@ class userLogin extends React.Component {
         Auth.setToken(res.data.token);
         this.props.history.push('/auctions');
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
   render() {
@@ -38,6 +40,7 @@ class userLogin extends React.Component {
           user={this.state.user}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          errors={this.state.errors}
         />
       </div>
     );
