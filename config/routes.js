@@ -28,19 +28,25 @@ router.route('/hotels/:id')
 router.route('/hotels/new')
   .post(secureRoute, hotels.create);
 
+router.route('/auctions')
+  .get(auctions.index);
+
 router.route('/auctions/new')
   .post(secureRoute, auctions.create);
 
 router.route('/auctions/:id')
   .get(auctions.show)
-  // .put(secureRoute, auctions.update) cant edit an auction once its started
   .delete(secureRoute, auctions.delete);
+
+router.route('/auctions/:id/bids')
+  .post(secureRoute, auctions.addBid);
+
+
+
 
 // router.route('/auctions/:id/edit')
 // .get(secureRoute, auctions.edit); cant edit an auction once its started
 
-router.route('/auctions')
-  .get(auctions.index);
 
 
 // router.route('/auctions/:id/bids/new')

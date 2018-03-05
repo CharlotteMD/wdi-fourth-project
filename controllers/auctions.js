@@ -10,10 +10,6 @@ function auctionsIndex(req, res, next) {
 }
 
 function auctionsCreate(req, res, next) {
-
-  // take hotel id 
-  // if(req.file) req.body.image = req.file.filename;
-
   Auction
     .create(req.body)
     .then(auction => res.status(201).json(auction))
@@ -60,11 +56,29 @@ function auctionsDelete(req, res, next) {
     .catch(next);
 }
 
+function addBid(req, res, next) {
+  req.body.createdBy = req.currentUser.id;
 
+
+  Auction
+    .findById(req.params.id)
+    .exec()
+    .then(auction => {
+      if(!auction) return res.notFound();
+
+      auction.bids.push(req.body);
+      return auction.save();
+    })
+    .then(auction => {
+      return res.status(200).json(auction);
+    })
+    .catch(next);
+}
 
 module.exports = {
   index: auctionsIndex,
   create: auctionsCreate,
   show: auctionsShow,
-  delete: auctionsDelete
+  delete: auctionsDelete,
+  addBid: addBid
 };

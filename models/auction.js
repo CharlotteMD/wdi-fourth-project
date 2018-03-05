@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-// const bidSchema = new mongoose.Schema({
-//   bid: Number,
-//   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
-// }, {
-//   timestamps: true
-// });
+const bidSchema = new mongoose.Schema({
+  amount: Number,
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
+});
 
 const auctionSchema = mongoose.Schema({
   hotel: { type: mongoose.Schema.ObjectId, ref: 'Hotel', required: true },
@@ -15,10 +15,7 @@ const auctionSchema = mongoose.Schema({
   maxGuests: Number,
   board: String,
   details: String,
-  bids: [ {
-    amount: Number,
-    createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
-  } ]
+  bids: [ bidSchema ]
 }, {
   timestamps: true
 });
