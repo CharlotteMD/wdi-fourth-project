@@ -90,7 +90,7 @@ class UserProfile extends React.Component {
 
 
           <div className="hotel-show">
-
+            <h3>Your Bids</h3>
 
             {this.state.user && this.state.user.bids.reduce((accumulator, element) => {
               if(accumulator.some(auction => auction.id === element.id)) {
@@ -112,7 +112,7 @@ class UserProfile extends React.Component {
                 <div key={auction.id}>
                   <a href={`/auctions/${auction.auctionLink}`}><img src={auction.hotelImage}/></a>
                   <a href={`/hotels/${auction.hotelLink}`}><p>{auction.hotelName}</p></a>
-                  
+
                   <p>
                     {moment(auction.auctionDates).format('do MMMM, YYYY')}
                   </p>

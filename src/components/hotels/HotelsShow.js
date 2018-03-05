@@ -15,9 +15,9 @@ class HotelsShow extends React.Component {
       image: '',
       location: '',
       info: '',
-      amenities: null,
+      amenities: [],
       stars: '',
-      auctions: null
+      auctions: []
     }
   }
 
@@ -55,18 +55,21 @@ class HotelsShow extends React.Component {
 
         <p className="info">{this.state.hotel.info}</p>
 
-        <p>Facilities: {this.state.hotel.amenities}</p>
+        <p>Facilities:</p>
 
-          {/* { this.state.hotel.map((amenity, i) => {
-            return <div key={i}>
-            <ul>
-            <li><p>{this.state.hotel.amenities}</p></li>
-          </ul>
-        </div>;
-      })} */}
+        { this.state.hotel.amenities.map((amenity, i) => {
+          return(
+
+            <div key={i}>
+              <ul>
+                <li><p>{amenity}</p></li>
+              </ul>
+            </div>
+          );
+        })}
 
 
-        { this.state.hotel.admin === Auth.getPayload().userId &&
+        { Auth.isAuthenticated() && (this.state.hotel.admin === Auth.getPayload().userId) &&
           <div>
             <Link to={`/auctions/new/${this.state.hotel._id}`}>
               <button className="main-button">New Auction</button>
@@ -89,13 +92,13 @@ class HotelsShow extends React.Component {
             {this.state.hotel.auctions &&  this.state.hotel.auctions.map((auction, i) => {
               return(
 
-                  <div key={i} className="col-md-6">
-                    <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
-                    <Link to={`/auctions/${auction.id}`}>
-                      {auction.board}
-                    </Link>
-                  </div>
-              
+                <div key={i} className="col-md-6">
+                  <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
+                  <Link to={`/auctions/${auction.id}`}>
+                    {auction.board}
+                  </Link>
+                </div>
+
               );
             })}
           </div>
