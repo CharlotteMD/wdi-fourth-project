@@ -6,6 +6,7 @@ import Axios from 'axios';
 
 import Auth from '../../lib/Auth';
 
+import moment from 'moment';
 
 class UserProfile extends React.Component {
   state = {
@@ -111,9 +112,10 @@ class UserProfile extends React.Component {
                 <div key={auction.id}>
                   <a href={`/auctions/${auction.auctionLink}`}><img src={auction.hotelImage}/></a>
                   <a href={`/hotels/${auction.hotelLink}`}><p>{auction.hotelName}</p></a>
-                  {/* <p>{auction.auctionDates}</p>
-
-                  {moment(this.state.auction.checkInDate).format('do MMMM, YYYY')}, for {this.state.auction.nights} nights */}
+                  
+                  <p>
+                    {moment(auction.auctionDates).format('do MMMM, YYYY')}
+                  </p>
 
                 </div>
               );
