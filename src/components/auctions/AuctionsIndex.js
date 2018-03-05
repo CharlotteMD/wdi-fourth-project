@@ -51,7 +51,7 @@ class AuctionsIndex extends Component {
 
                           <ul>
                             <li>
-                              <a href={`hotels/${auction.hotel._id}`} className="hotelShow">
+                              <a href={`hotels/${auction.hotel.id}`} className="hotelShow">
                                 <h3>{auction.hotel.name}</h3>
                               </a>
                             </li>

@@ -85,18 +85,20 @@ class HotelsShow extends React.Component {
 
 
         <div className="currentAuctions">
+          <div className="row">
+            {this.state.hotel.auctions &&  this.state.hotel.auctions.map((auction, i) => {
+              return(
 
-          {this.state.hotel.auctions &&  this.state.hotel.auctions.map((auction, i) => {
-            return(
-              <div key={i}>
-                <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
-                <Link to={`/auctions/${auction.id}`}>
-                  {auction.board}
-                </Link>
-              </div>
-            );
-          })}
-
+                  <div key={i} className="col-md-6">
+                    <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
+                    <Link to={`/auctions/${auction.id}`}>
+                      {auction.board}
+                    </Link>
+                  </div>
+              
+              );
+            })}
+          </div>
 
         </div>
 
