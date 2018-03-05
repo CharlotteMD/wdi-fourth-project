@@ -82,20 +82,20 @@ class HotelsShow extends React.Component {
 
           {/* <p>{this.state.hotel}</p> */}
 
-          {/* <div className="currentAuctions">
+          <div className="currentAuctions">
 
-            {this.state.hotel && this.state.hotel.auctions.map(auction => {
+            {/* {this.state.hotel && this.state.hotel.auctions.map(auction, i => {
               return(
-                <div key={auction.id}>
+                <div key={i}>
                   <p>{auction.checkInDate}</p>
-                  <a href={`/auctions/${auction._id}`}>
+                  <a href={`/auctions/${this.state.auction._id}`}>
                     <p>{auction.board}</p>
                   </a>
                 </div>
               );
-            })}
+            })} */}
 
-          </div> */}
+          </div>
 
         </div>
       </div>

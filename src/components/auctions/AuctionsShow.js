@@ -161,7 +161,7 @@ class AuctionsShow extends React.Component {
             { this.findCurrentUserTopBid() ?
               (
                 <div>
-                  <p>{ this.findCurrentUserTopBid().amount }</p>
+                  <p>£{ this.findCurrentUserTopBid().amount }</p>
                   { this.isCurrentUserWinning() ?
                     (<p>This is the winning bid.</p>)
                     :
@@ -178,7 +178,7 @@ class AuctionsShow extends React.Component {
             }
 
             { this.state.auction.hotel.admin === Auth.getPayload().userId &&
-              <p>The highest on this auction is currently {this.findWinningBid().amount}</p>
+              <p>The highest on this auction is currently £{this.findWinningBid().amount}</p>
             }
           </div>
 
