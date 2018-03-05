@@ -29,7 +29,7 @@ class HotelsEdit extends React.Component {
     Axios
       .put(`/api/hotels/${this.props.match.params.id}`, this.state.hotel,
         { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
-      .then(res => this.props.history.push(`/hotels/${res.data.id}`))
+      .then(this.props.history.push(`/users/${Auth.getPayload().userId}`))
       .catch(err => console.log(err));
   }
 

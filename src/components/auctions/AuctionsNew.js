@@ -31,7 +31,7 @@ class Register extends React.Component {
       .then(res => {
         console.log('the response from the api', res);
         // take url for hotel
-        this.props.history.push(`/auctions/${res.data._id}`);
+        (this.props.history.push(`/users/${Auth.getPayload().userId}`));
       })
       .catch(err => console.log(err));
   }

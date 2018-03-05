@@ -29,7 +29,7 @@ class HotelsNew extends React.Component {
 
     Axios
       .post('/api/hotels', this.state.hotel, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`} })
-      .then(() => this.props.history.push('/'))
+      .then(this.props.history.push(`/users/${Auth.getPayload().userId}`))
       .catch(err => console.log(err));
   }
 
