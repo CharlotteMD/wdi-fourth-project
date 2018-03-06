@@ -2,8 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import Auth from '../../lib/Auth';
-// import AuthRoutes from '../auth/AuthRoutes';
-
 
 const Navbar = ({ history }) => {
   function logout(e) {
@@ -36,7 +34,6 @@ const Navbar = ({ history }) => {
           <li className="nav-item">
             <a href="/" className="nav-link" onClick={logout}><button>Logout</button></a>
           </li>}
-
 
 
         </ul>

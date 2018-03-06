@@ -34,10 +34,6 @@ class UserProfile extends React.Component {
       .catch(err => console.log(err));
   }
 
-  // topBid = {bid.amount.reduce((topBid, bid), 0)};
-
-
-
 
   render() {
     return(

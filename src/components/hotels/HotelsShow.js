@@ -6,8 +6,6 @@ import moment from 'moment';
 
 import Axios from 'axios';
 
-// import HotelsEdit from './HotelsEdit';
-
 class HotelsShow extends React.Component {
   state = {
     hotel: {
@@ -93,27 +91,27 @@ class HotelsShow extends React.Component {
         <div className="currentAuctions">
           <h3>Current Auctions</h3>
           <div className="yeshover">
-          <div className="row">
+            <div className="row">
 
-            {this.state.hotel.auctions &&  this.state.hotel.auctions.map((auction, i) => {
-              return(
+              {this.state.hotel.auctions &&  this.state.hotel.auctions.map((auction, i) => {
+                return(
 
-                <div key={i} className="col-md-6" >
-                  <div className="details">
-                    <a href={`/auctions/${auction.id}`}>
+                  <div key={i} className="col-md-6" >
+                    <div className="details">
+                      <a href={`/auctions/${auction.id}`}>
 
-                      <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
+                        <p>{moment(auction.checkInDate).format('do MMMM, YYYY')}</p>
 
-                      <p>{auction.board}</p>
-                    </a>
+                        <p>{auction.board}</p>
+                      </a>
 
 
+                    </div>
                   </div>
-                </div>
 
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
           </div>
 
         </div>

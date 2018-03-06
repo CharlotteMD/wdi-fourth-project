@@ -9,7 +9,6 @@
   padding: 5px;
   margin: 0 auto;
   height: calc(100% - 30px);
-  // margin: 20px 10px 0px 10px;
   box-shadow: 10px 10px 5px $header-color;
 
   h2 {
@@ -81,19 +80,16 @@
   }
 }
 
-
   ul {
     list-style: none;
     padding-left: 0px;
     display: flex;
 
     li {
-      // text-align: center;
       color: $text-color;
       padding-left: 0px;
       margin: 20px;
       flex-wrap: wrap;
-
 
     }
   }

@@ -1,4 +1,8 @@
 ![getaroom](https://user-images.githubusercontent.com/32647222/37030907-880e564c-2134-11e8-8b11-75e806a84e38.png)
+<a href="https://getaroom-charmd.herokuapp.com/">GetARoom on Heroku</a>
+
+<a href="https://github.com/CharlotteMD/wdi-fourth-project">Github</a>
+
 <h1>An auction site for hotels.<h1>
 
 <h3>The biggest pain point for hotels is not filling rooms, particularly the fancy expensive rooms.  This app allows them to auction the room last minute if they cant fill it through their existing booking systems.  It also offers hotel guests great bargains on the nicest hotel rooms.</h3>
@@ -51,7 +55,29 @@ The most complicated part of the planning for me was working out how the models 
 
 <h3>Technologies Used</h3>
 
-<h1>ADD HERE</h1>
+  <li>axios</li>
+  <li>bcrypt</li>
+  <li>body-parser</li>
+  <li>bootstrap</li>
+  <li>express</li>
+  <li>jsonwebtoken</li>
+  <li>moment</li>
+  <li>mongoose</li>
+  <li>morgan</li>
+  <li>react</li>
+  <li>react-dom</li>
+  <li>react-router-dom</li>
+  <li>supertest</li>
+  <li>babel</li>
+  <li>chai</li>
+  <li>enzyme</li>
+  <li>mocha</li>
+  <li>node-sass</li>
+  <li>nyc</li>
+  <li>sinon</li>
+  <li>canva</li>
+  <li>coolors</li>
+  <li>favicon generator</li>
 
 
 <h3>Wins</h3>
@@ -61,7 +87,7 @@ The most complicated part of the planning for me was working out how the models 
 
 
 <h3>Blockers</h3>
-<li>I found the back end more complicated to get my head around and it caused a lot of my bugs</li>
+<li>Working out the Functionality of the auction was really tricky, particularly showing and hiding different bids. It really tested my JavaScript ability!</li>
 <li>I think I set myself a lot to create in a week!</li>
 
 <h3>Future Functionality</h3>

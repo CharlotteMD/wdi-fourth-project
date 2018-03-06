@@ -7,13 +7,10 @@ body {
   margin: 0 auto;
   justify-content: center;
   padding-left: 0px;
-  // background-color: pink;
-  // **** NEED TO CENTER THESE *****
 }
 
 .card {
   text-align: center;
-  // background-color: $light-color;
   justify-content: center;
   flex-wrap: wrap;
   border: solid $emph-color 5px;
@@ -46,17 +43,14 @@ body {
 
   ul {
     list-style: none;
-    // text-align: center;
     padding-left: 0px;
 
     li {
-      // text-align: center;
       color: $text-color;
       padding-left: 0px;
     }
     span {
       font-weight: bold;
-      // text-decoration: underline;
     }
   }
 

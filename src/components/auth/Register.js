@@ -71,17 +71,6 @@ class Register extends React.Component {
         .catch(err => console.log(err));
     }
 
-
-    // console.log(this.state);
-    // Axios.post('/api/register', this.state.user)
-    // // 504 error, this isnt returning quick enough
-    //   .then(res => {
-    //     console.log('the response from the api', res);
-    //     Auth.setToken(res.data.token);
-    //     Axios.post('/api/hotels/new', this.state.hotel);
-    //     this.props.history.push('/');
-    //   })
-    //   .catch(err => console.log(err));
   }
 
   render() {

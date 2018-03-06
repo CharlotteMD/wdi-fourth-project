@@ -1,9 +1,4 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
-//
-// import Auth from '../../lib/Auth';
-// // import AuthRoutes from '../auth/AuthRoutes';
-
 
 const Footer = () => {
 

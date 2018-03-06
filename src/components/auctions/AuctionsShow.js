@@ -31,7 +31,6 @@ class AuctionsShow extends React.Component {
     bidMessage: null
   }
 
-  // let date = (moment(checkInDate).format('LL'));
 
   componentDidMount() {
     Axios

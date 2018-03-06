@@ -1,7 +1,4 @@
 const mongoose = require('mongoose');
-// const bcrypt = require('bcrypt');
-
-// const auctionSchema = require('./auction');
 
 const hotelSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
@@ -29,33 +26,5 @@ hotelSchema.virtual('auctions'/* this is the name of the field that we are creat
   localField: '_id', // Find people or organizations where `localField`
   foreignField: 'hotel' // is equal to `foreignField
 });
-
-// hotelSchema.methods.belongsTo = function hotelBelongsTo(user) {
-//   return this.createdBy.id === user.id;
-// };
-
-// hotelSchema
-//   .virtual('passwordConfirmation')
-//   .set(function setPasswordConfirmation(passwordConfirmation) {
-//     this._passwordConfirmation = passwordConfirmation;
-//   });
-//
-// hotelSchema.pre('validate', function checkPassword(next) {
-//   if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
-//     this.invalidate('passwordConfirmation', 'Passwords do not match');
-//   }
-//   next();
-// });
-//
-// hotelSchema.pre('save', function hashPassword(next) {
-//   if(this.isModified('password')) {
-//     this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8));
-//   }
-//   next();
-// });
-//
-// hotelSchema.methods.validatePassword = function validatePassword(password) {
-//   return bcrypt.compareSync(password, this.password);
-// };
 
 module.exports = mongoose.model('Hotel', hotelSchema);

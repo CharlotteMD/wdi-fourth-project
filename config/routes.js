@@ -42,28 +42,6 @@ router.route('/auctions/:id/bids')
   .post(secureRoute, auctions.addBid);
 
 
-
-
-// router.route('/auctions/:id/edit')
-// .get(secureRoute, auctions.edit); cant edit an auction once its started
-
-
-
-// router.route('/auctions/:id/bids/new')
-//   .post(secureRoute, auctions.new.bids); // only users can bid
-
-// router.route('/auctions/:id/bid/:id')
-//   .get(auctions.show.bids); // only user who owns bid can see it, everyone else can only see highest bid
-// .get(secureRoute, auctions.edit); cant edit a bid once it has been made
-// .delete(secureRoute, auctions.delete); cant delete a bid once its been made
-
-// router.route('/auctions/:id/bid/:id/edit')
-//   .get(secureRoute, auctions.edit); bids cant be edited
-
-// router.route('/auctions')
-//   .get(auctions.index); can only see the top bid
-
-
 router.all('/*', (req, res) => res.notFound());
 
 module.exports = router;

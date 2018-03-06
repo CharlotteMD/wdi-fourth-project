@@ -14,18 +14,6 @@ class LandingPage extends React.Component {
   }
 
 
-
-  // componentDidMount() {
-  //
-  //   Axios
-  //     .get(`/api/users/${Auth.getPayload().userId}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}` } })
-  //     .then(res => {
-  //       this.setState({ user: res.data }, () => console.log(this.state.user));
-  //     })
-  //     .catch(err => console.log(err));
-  //
-  // }
-
   render() {
     return(
 

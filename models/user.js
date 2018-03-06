@@ -35,13 +35,6 @@ userSchema.virtual('bids'/* this is the name of the field that we are creating *
   foreignField: 'bids.createdBy' // is equal to `foreignField`
 });
 
-// userSchema.virtual('auctions'/* this is the name of the field that we are creating */, {
-//   ref: 'Auction', // The model to use, conditional on the doc
-//   localField: '_id', // Find people or organizations where `localField`
-//   foreignField: 'hotel.admin' // is equal to `foreignField`
-// });
-
-
 userSchema.pre('validate', function checkPassword(next) {
   if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
     this.invalidate('passwordConfirmation', 'Passwords do not match');

@@ -8,7 +8,6 @@ import HotelsEdit from './HotelsEdit';
 const HotelsRoutes = () => {
   return (
     <Switch>
-      {/* <Route exact path="/auctions" component={HotelsIndex} /> */}
       <Route exact path="/hotels/new" component={HotelsNew} />
       <Route path="/hotels/:id/edit" component={HotelsEdit} />
       <Route path="/hotels/:id" component={HotelsShow} />

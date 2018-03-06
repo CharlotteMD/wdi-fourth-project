@@ -30,21 +30,6 @@ function auctionsShow(req, res, next) {
     .catch(next);
 }
 
-// function auctionsUpdate(req, res, next) {
-//
-//   // if(req.file) req.body.image = req.file.filename;
-//
-//   Auction
-//     .findById(req.params.id)
-//     .exec()
-//     .then((auction) => {
-//       if(!auction) return res.notFound();
-//       auction = Object.assign(auction, req.body);
-//       return auction.save();
-//     })
-//     .then(auction => res.json(auction))
-//     .catch(next);
-// }
 
 function auctionsDelete(req, res, next) {
   Auction
