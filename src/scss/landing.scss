@@ -1,0 +1,40 @@
+.landing {
+  padding-bottom: 20px;
+  h1 {
+    text-decoration: none;
+    font-size: 50px;
+    color: $header-color;
+    padding-top: 50px;
+  }
+
+  img {
+    margin-top: -50px;
+  }
+
+  h2 {
+    font-weight: 100;
+    color: $text-color;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    padding: 30px;
+  }
+
+  h3 {
+    color: $light-color;
+    font-weight: 900;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+
+  h3:hover {
+    color: $emph-color;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  a {
+    color: $light-color;
+  }
+}

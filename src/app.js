@@ -7,6 +7,7 @@ import './scss/style.scss';
 
 import Navbar from './components/utility/Navbar';
 import Footer from './components/utility/Footer';
+import LandingPage from './components/utility/LandingPage';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import UserProfile from './components/auth/UserProfile';
@@ -42,6 +43,9 @@ class App extends React.Component {
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+
+          <Route exact path="/" component={LandingPage} />
+
           <AuctionsRoutes />
           <HotelsRoutes />
 
