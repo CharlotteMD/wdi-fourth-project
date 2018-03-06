@@ -2,7 +2,60 @@
     body {
         margin: 0 auto;
         justify-content: center;
+        text-align: center;
+        padding: 0px;
+    }
+    .landing {
+      img {
+        max-width: 300px;
+      }
     }
 
-    
+      .title {
+        margin: 0 auto;
+        h1 {
+          font-size: 75px;
+          margin-bottom: 50px;
+      }
+
+      ul {
+        justify-content: center;
+  
+      }
+
+    }
+
+    a {
+      padding: 0px;
+    }
+
+    ul {
+      margin: 0px;
+      padding: 0px;
+
+      li {
+        margin: 0px;
+        padding: 0px;
+        button {
+          padding: 0px;
+          margin: 0px;
+        }
+      }
+    }
+
+
+  .hotel-show, .auction-show {
+    max-width: 300px;
+
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+
+a.nav-link {
+
+}
+
+
 }

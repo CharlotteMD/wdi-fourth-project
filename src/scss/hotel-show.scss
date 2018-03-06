@@ -131,10 +131,17 @@
 }
 
 form {
-  margin: 0 auto;
+  margin: 5 auto;
+
 
   .form-group {
-    margin: 0 auto;
+    margin: 5 auto;
+  }
+
+  label {
+    color: $light-color;
+    font-weight: bold;
+    text-decoration: underline;
   }
 }
 
