@@ -68,81 +68,70 @@ class UserProfile extends React.Component {
             <Link to="/hotels/new">
               <button className="main-button">New Hotel</button>
             </Link>
+            <div className="container">
+              <div className="row">
+                {this.state.user && this.state.user.hotels.map((hotel, i) => {
+                  return(
+                    <div key={i} className="col-md-6 col-sm-6 col-xs-12">
+                      <h4>{hotel.name}</h4>
+                      <a href={`/hotels/${hotel.id}`}>
+                        <img src={hotel.image}/>
+                      </a>
 
-            {this.state.user && this.state.user.hotels.map((hotel, i) => {
-              return(
-                <div key={i}>
-                  <h4>{hotel.name}</h4>
-                  <a href={`/hotels/${hotel.id}`}>
-                    <img src={hotel.image}/>
-                  </a>
-
-                </div>
-              );
-            })}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
 
           </div>
-
-
-          {/* view your current auctions */}
-          {/*  create new auctions */}
-
-
-
 
           <div className="hotel-show bids">
 
             <div className="bids">
-            <h3>Your Bids</h3>
+              <h3>Your Bids</h3>
 
-            {this.state.user && this.state.user.bids.length === 0 &&
-              <p>You have not bid on anything yet.</p>
-            }
-
-
-
-
-            {this.state.user && this.state.user.bids.reduce((accumulator, element) => {
-              if(accumulator.some(auction => auction.id === element.id)) {
-                return accumulator;
-              } else {
-                const newAuction = {
-                  id: element.id,
-                  hotelName: element.hotel.name,
-                  hotelImage: element.hotel.image,
-                  hotelLink: element.hotel._id,
-                  auctionLink: element.id,
-                  auctionDates: element.checkInDate
-                };
-                accumulator.push(newAuction);
-                return accumulator;
+              {this.state.user && this.state.user.bids.length === 0 &&
+                <p>You have not bid on anything yet.</p>
               }
-            }, []).map(auction => {
-              return(
-                <div key={auction.id}>
-                  <a href={`/auctions/${auction.auctionLink}`}><img src={auction.hotelImage}/></a>
-                  <a href={`/hotels/${auction.hotelLink}`}><p>{auction.hotelName}</p></a>
+              <div className="container">
+                <div className="row">
+                  {this.state.user && this.state.user.bids.reduce((accumulator, element) => {
+                    if(accumulator.some(auction => auction.id === element.id)) {
+                      return accumulator;
+                    } else {
+                      const newAuction = {
+                        id: element.id,
+                        hotelName: element.hotel.name,
+                        hotelImage: element.hotel.image,
+                        hotelLink: element.hotel._id,
+                        auctionLink: element.id,
+                        auctionDates: element.checkInDate
+                      };
+                      accumulator.push(newAuction);
+                      return accumulator;
+                    }
+                  }, []).map((auction) => {
+                    return(
+                      <div key={auction.id} className="col-md-6 col-sm-6 col-xs-12">
+                        <div >
+                          <a href={`/auctions/${auction.auctionLink}`}><img src={auction.hotelImage}/></a>
+                          <a href={`/hotels/${auction.hotelLink}`}><p>{auction.hotelName}</p></a>
 
-                  <p>
-                    {moment(auction.auctionDates).format('do MMMM, YYYY')}
-                  </p>
+                          <p>
+                            {moment(auction.auctionDates).format('do MMMM, YYYY')}
+                          </p>
 
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })
-
-            }
+              </div>
+            </div>
           </div>
-          </div>
-
         </div>
-
-      </div>
-
-    );
+      </div>);
   }
 }
-
-
-
 export default UserProfile;

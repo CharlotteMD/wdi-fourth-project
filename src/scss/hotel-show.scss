@@ -5,9 +5,10 @@
   border: solid $emph-color 5px;
   border-radius: 5%;
   width: 700px;
-  height: auto;
+
   padding: 5px;
   margin: 0 auto;
+  height: calc(100% - 30px);
   // margin: 20px 10px 0px 10px;
   box-shadow: 10px 10px 5px $header-color;
 
@@ -113,8 +114,8 @@
 
 .userProfile {
   img {
-    max-width: 50%;
-    height: auto;
+    max-width: 95%;
+    height: 200px;
     justify-content: center;
   }
 }
