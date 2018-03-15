@@ -9,7 +9,6 @@ const hotelSchema = new mongoose.Schema({
   info: { type: String, required: true },
   admin: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   stars: Number
-  // auctions: [{ auctionSchema }]
 });
 
 hotelSchema.set('toJSON', {

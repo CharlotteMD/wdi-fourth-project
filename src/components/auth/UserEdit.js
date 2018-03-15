@@ -4,7 +4,6 @@ import Axios from 'axios';
 import Auth from '../../lib/Auth';
 import UserForm from './UserForm';
 
-
 class UsersEdit extends React.Component {
   state = {
     user: null

@@ -13,8 +13,6 @@ class UserProfile extends React.Component {
     user: null
   }
 
-
-
   componentDidMount() {
 
     Axios
@@ -34,7 +32,6 @@ class UserProfile extends React.Component {
       .catch(err => console.log(err));
   }
 
-
   render() {
     return(
       <div className="userProfile">
@@ -42,7 +39,6 @@ class UserProfile extends React.Component {
         <div className="userInfo">
 
           {this.state.user && <h2>Welcome back, {this.state.user.name}</h2>}
-
 
           <div>
 

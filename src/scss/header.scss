@@ -20,7 +20,6 @@
       text-decoration: none;
     }
 
-
   h1 {
     font-weight: 900;
     text-decoration: none;
@@ -34,23 +33,22 @@
     margin-top: -50px;
     margin-bottom: 10px;
   }
+
   header {
 
     .navbar {
       justify-content: center;
 
-        ul {
-          list-style-type: none;
-          overflow: hidden;
-          padding-left: 0px;
+      ul {
+        list-style-type: none;
+        overflow: hidden;
+        padding-left: 0px;
 
-
-          li {
-            float: left;
-            text-align: center;
-
-        	}
-  	    }
-      }
+        li {
+          float: left;
+          text-align: center;
+        }
+  	  }
     }
   }
+}

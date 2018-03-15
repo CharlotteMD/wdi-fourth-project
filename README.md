@@ -93,6 +93,6 @@ The most complicated part of the planning for me was working out how the models 
 <h3>Future Functionality</h3>
 
 <li>I had planned to add filters to the Auctions Index but I ran out of time.  They would filter by current highest bid, location and facilities.</li>
-<li>I wanted to add the ability for hotels to email the winning bidder.</li>
+<li>I wanted to add the ability for hotels to message the winning bidder.</li>
 <li>I'd really like the auction to automatically end after a set time and then delete itself a week or so later.</li>
 <li>I have started developing another side of the site where users can set a budget and the kind of hotel they are looking for for a specific date and if a hotel can fulfil this they can message the guest. Watch this space!</li>

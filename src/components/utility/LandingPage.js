@@ -2,17 +2,10 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import Axios from 'axios';
-
-import Auth from '../../lib/Auth';
-
-
-
 class LandingPage extends React.Component {
   state = {
     user: null
   }
-
 
   render() {
     return(
@@ -23,11 +16,9 @@ class LandingPage extends React.Component {
 
         <h2>Get a Room is an auction website for hotel rooms. Guests can find brilliant last minute deals for the most luxurious hotel rooms in London. Hotels can fill their unsold rooms and entice new guests to stay with them.</h2>
 
-
         <Link to={'/register'}>
           <h3>Get Started!</h3>
         </Link>
-
 
         <p><Link to={'/register'}>Register</Link> as a guest or a hotel or head to <Link to={'/auctions'}>view auctions</Link> to check out the latest deals!</p>
 

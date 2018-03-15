@@ -19,7 +19,6 @@ class HotelsShow extends React.Component {
     }
   }
 
-
   componentDidMount() {
 
     Axios
@@ -48,11 +47,9 @@ class HotelsShow extends React.Component {
         <h3>{this.state.hotel.location}</h3>
         <h3>{this.state.hotel.stars}⭐️</h3>
 
-
         <img src={this.state.hotel.image}/>
 
         <p className="info">{this.state.hotel.info}</p>
-
 
         <p><span>Facilities:</span></p>
         <ul>
@@ -67,8 +64,6 @@ class HotelsShow extends React.Component {
             );
           })}
         </ul>
-
-
 
         { Auth.isAuthenticated() && (this.state.hotel.admin === Auth.getPayload().userId) &&
           <div>
@@ -87,7 +82,6 @@ class HotelsShow extends React.Component {
           </div>
         }
 
-
         <div className="currentAuctions">
           <h3>Current Auctions</h3>
           <div className="yeshover">
@@ -105,7 +99,6 @@ class HotelsShow extends React.Component {
                         <p>{auction.board}</p>
                       </a>
 
-
                     </div>
                   </div>
 
@@ -121,7 +114,5 @@ class HotelsShow extends React.Component {
     );
   }
 }
-
-
 
 export default HotelsShow;

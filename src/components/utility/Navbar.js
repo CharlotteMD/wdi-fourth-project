@@ -35,7 +35,6 @@ const Navbar = ({ history }) => {
             <a href="/" className="nav-link" onClick={logout}><button>Logout</button></a>
           </li>}
 
-
         </ul>
 
       </div>

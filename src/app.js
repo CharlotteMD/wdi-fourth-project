@@ -16,10 +16,6 @@ import UserEdit from './components/auth/UserEdit';
 import AuctionsRoutes from './components/auctions/AuctionsRoutes';
 import HotelsRoutes from './components/hotels/HotelsRoutes';
 
-// import Auth from './lib/Auth';
-
-
-
 class App extends React.Component {
 
   render() {
@@ -31,15 +27,13 @@ class App extends React.Component {
             <header>
 
               <Navbar />
-              {/* <h1>GetARoom.com</h1> */}
-              {/* <h2>Pay what you want for the best hotels in London</h2> */}
+
               <Link to="/"><h1>Get A Room</h1></Link>
             </header>
 
             <a className="app-nav" href="/auctions"><button>View Current Auctions</button></a>
 
           </div>
-
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
@@ -51,7 +45,6 @@ class App extends React.Component {
 
           <Route exact path="/users/:id/edit" component={UserEdit}/>
           <Route exact path="/users/:id" component={UserProfile}/>
-
 
           <Footer />
 

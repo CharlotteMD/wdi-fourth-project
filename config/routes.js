@@ -28,6 +28,7 @@ router.route('/hotels/:id')
 router.route('/hotels')
   .post(secureRoute, hotels.create);
 
+
 router.route('/auctions')
   .get(auctions.index);
 

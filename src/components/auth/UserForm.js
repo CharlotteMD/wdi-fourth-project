@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const UserForm = ({ handleUserChange, handleSubmit, user }) => {
   return (
     <div className="container">

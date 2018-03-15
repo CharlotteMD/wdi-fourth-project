@@ -30,7 +30,6 @@ function auctionsShow(req, res, next) {
     .catch(next);
 }
 
-
 function auctionsDelete(req, res, next) {
   Auction
     .findById(req.params.id)
@@ -45,7 +44,6 @@ function auctionsDelete(req, res, next) {
 
 function addBid(req, res, next) {
   req.body.createdBy = req.currentUser.id;
-
 
   Auction
     .findById(req.params.id)

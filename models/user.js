@@ -23,10 +23,10 @@ userSchema
     this._passwordConfirmation = passwordConfirmation;
   });
 
-userSchema.virtual('hotels'/* this is the name of the field that we are creating */, {
-  ref: 'Hotel', // The model to use, conditional on the doc
-  localField: '_id', // Find people or organizations where `localField`
-  foreignField: 'admin' // is equal to `foreignField
+userSchema.virtual('hotels', {
+  ref: 'Hotel',
+  localField: '_id',
+  foreignField: 'admin' 
 });
 
 userSchema.virtual('bids'/* this is the name of the field that we are creating */, {

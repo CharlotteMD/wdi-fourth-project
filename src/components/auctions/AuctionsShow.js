@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
 
 import Axios from 'axios';
 
@@ -118,26 +116,17 @@ class AuctionsShow extends React.Component {
     }
   }
 
-
   render() {
     return(
       <div className="auction-show">
-
-
 
         <a href={`/hotels/${this.state.auction.hotel.id}`}>
           <h2>{this.state.auction.hotel.name}</h2>
         </a>
 
-
-
         <img src={this.state.auction.hotel.image}/>
 
-
-
         <p>{this.state.auction.details}</p>
-
-
 
         <div className="details">
 
