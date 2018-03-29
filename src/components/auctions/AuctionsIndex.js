@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+
 import moment from 'moment';
+// import SearchBar from  '../utility/SearchBar';
+// import _ from 'lodash';
 
 class AuctionsIndex extends Component {
       state = {
@@ -36,11 +39,17 @@ class AuctionsIndex extends Component {
           .catch(err => console.log(err));
       }
 
+
+
       render() {
+
+
         return(
           <div className="auction-index">
             <div className="container">
               <h1>Current Auctions</h1>
+
+
               <div>
 
                 <div className="row">
