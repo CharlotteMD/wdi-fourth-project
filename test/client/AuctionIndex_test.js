@@ -1,4 +1,7 @@
 /* global describe, it, beforeEach, before, after */
+
+// run yarn test:client for these Tests
+
 import React from 'react';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
@@ -6,11 +9,10 @@ import sinon from 'sinon';
 import Promise from 'bluebird';
 import Axios from 'axios';
 import { MemoryRouter } from 'react-router-dom';
-import AuctionsIndex from '../../../src/components/auctions/AuctionsIndex';
+import AuctionsIndex from '../../src/components/auctions/AuctionsIndex';
 
 const auctionData = [
   {
-
     'bids': [],
     'hotel': {
       '_id': '1',
@@ -34,7 +36,6 @@ const auctionData = [
     'id': '1'
   },
   {
-
     'bids': [],
     'hotel': {
       '_id': '2',
@@ -105,10 +106,9 @@ describe('Auctions Index tests', () => {
   it('should display links to hotel show pages', done => {
     promise.then(() => {
       wrapper.update();
-      expect(wrapper.find('h3').length).to.eq(2);
+      expect(wrapper.find('div.hotelShow').length).to.eq(2);
       expect(wrapper.find({ href: 'hotels/1' }).length).to.eq(1);
       expect(wrapper.find({ href: 'hotels/2' }).length).to.eq(1);
-
       done();
     });
   });
@@ -117,8 +117,8 @@ describe('Auctions Index tests', () => {
     promise.then(() => {
       wrapper.update();
       expect(wrapper.find('div.col-sm').length).to.eq(2);
-      // expect(wrapper.find({ h3: 'ibis, London City' }).length).to.eq(1);
-      // expect(wrapper.find({ h3: 'ANdAZ, London Liverpool Street' }).length).to.eq(1);
+      expect(wrapper.find({ h3: 'ibis, London City' }).length).to.eq(1);
+      expect(wrapper.find({ h3: 'ANdAZ, London Liverpool Street' }).length).to.eq(1);
       expect(wrapper.find('img').length).to.eq(2);
       expect(wrapper.find({ src: 'https://s-ec.bstatic.com/images/hotel/max1024x768/975/97514031.jpg' }).length).to.eq(1);
       expect(wrapper.find({ src: 'https://media-cdn.tripadvisor.com/media/photo-s/12/0f/50/6b/andaz-london-liverpool.jpg' }).length).to.eq(1);
