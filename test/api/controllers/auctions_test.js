@@ -122,47 +122,45 @@ describe('Auctions Controller Test', () => {
         });
     });
   });
+
+
+  it('should return created auction data in response body', done => {
+    api
+      .post('/api/auctions')
+      .set('Accept', 'application/json')
+      .set('Authorization', `Bearer ${token}`)
+      .send({
+        hotel: testHotel[0],
+        reservePrice: 500,
+        checkInDate: '01/03/2018',
+        nights: 1,
+        maxGuests: 3,
+        board: 'Bed only',
+        details: 'We are delighted to be able to offer our honeymoon suite. The offer will include the master bedroom and ajoining leisure rooms.'
+      })
+      .end((err, res) => {
+        expect(res.body)
+          .to.be.an('object')
+          .and.have.all.keys([
+            'hotel',
+            'reservePrice',
+            'checkInDate',
+            'nights',
+            'maxGuests',
+            'board',
+            'details'
+          ]);
+
+        done();
+      });
+  });
 });
 
-//   it('should return created holiday data in response body', done => {
-//     api
-//       .post('/api/auctions')
-//       .set('Accept', 'application/json')
-//       .set('Authorization', `Bearer ${token}`)
-//       .send({
-//         holidayName: 'Test Auction',
-//         createdBy: userCreated._id,
-//         attendees: [userCreated._id],
-//         dateArrive: '10 Feb',
-//         dateDepart: '20 Feb',
-//         hotel: hotelCreated._id
-//       })
-//       .end((err, res) => {
-//         expect(res.body)
-//           .to.be.an('object')
-//           .and.have.all.keys([
-//             '__v',
-//             '_id',
-//             'id',
-//             'holidayName',
-//             'createdBy',
-//             'attendees',
-//             'dateArrive',
-//             'dateDepart',
-//             'hotel',
-//             'comments'
-//           ]);
-//
-//         done();
-//       });
-//   });
-// });
-//
 // // SHOW ROUTE
 // describe('GET /api/auctions/:id', () => {
 //   let hotelCreated = null;
 //   let userCreated = null;
-//   let holidayCreated = null;
+//   let auctionCreated = null;
 //   let token = null;
 //
 //   beforeEach(done => {
@@ -182,8 +180,8 @@ describe('Auctions Controller Test', () => {
 //
 //         return Auction.create(testAuction);
 //       })
-//       .then(holiday => {
-//         holidayCreated = holiday;
+//       .then(auction => {
+//         auctionCreated = auction;
 //
 //         api
 //           .post('/api/login')
@@ -202,15 +200,15 @@ describe('Auctions Controller Test', () => {
 //
 //   it('should return a 200 response', done => {
 //     api
-//       .get(`/api/auctions/${holidayCreated.id}`)
+//       .get(`/api/auctions/${auctionCreated.id}`)
 //       .set('Accept', 'application/json')
 //       .set('Authorization', `Bearer ${token}`)
 //       .expect(200, done);
 //   });
 //
-//   it('should return holiday data in response body', done => {
+//   it('should return auction data in response body', done => {
 //     api
-//       .get(`/api/auctions/${holidayCreated.id}`)
+//       .get(`/api/auctions/${auctionCreated.id}`)
 //       .set('Accept', 'application/json')
 //       .set('Authorization', `Bearer ${token}`)
 //       .end((err, res) => {
@@ -220,7 +218,7 @@ describe('Auctions Controller Test', () => {
 //             '__v',
 //             '_id',
 //             'id',
-//             'holidayName',
+//             'auctionName',
 //             'createdBy',
 //             'attendees',
 //             'dateArrive',
@@ -238,7 +236,7 @@ describe('Auctions Controller Test', () => {
 // describe('PUT /api/auctions/:id', () => {
 //   let hotelCreated = null;
 //   let userCreated = null;
-//   let holidayCreated = null;
+//   let auctionCreated = null;
 //   let token = null;
 //
 //   beforeEach(done => {
@@ -258,8 +256,8 @@ describe('Auctions Controller Test', () => {
 //
 //         return Auction.create(testAuction);
 //       })
-//       .then(holiday => {
-//         holidayCreated = holiday;
+//       .then(auction => {
+//         auctionCreated = auction;
 //
 //         api
 //           .post('/api/login')
@@ -278,13 +276,13 @@ describe('Auctions Controller Test', () => {
 //
 //   it('should return a 200 response', done => {
 //     var updatedAuction = {
-//       holidayName: 'Updated',
+//       auctionName: 'Updated',
 //       dateArrive: '99 Feb',
 //       dateDepart: '99 Feb'
 //     };
 //
 //     api
-//       .put(`/api/auctions/${holidayCreated.id}`)
+//       .put(`/api/auctions/${auctionCreated.id}`)
 //       .set('Accept', 'application/json')
 //       .set('Authorization', `Bearer ${token}`)
 //       .send(updatedAuction)
@@ -293,20 +291,20 @@ describe('Auctions Controller Test', () => {
 //
 //   it('should return updated data in body', done => {
 //     var updatedAuction = {
-//       holidayName: 'Updated',
+//       auctionName: 'Updated',
 //       dateArrive: '99 Feb',
 //       dateDepart: '99 Feb'
 //     };
 //
 //     api
-//       .put(`/api/auctions/${holidayCreated.id}`)
+//       .put(`/api/auctions/${auctionCreated.id}`)
 //       .set('Accept', 'application/json')
 //       .set('Authorization', `Bearer ${token}`)
 //       .send(updatedAuction)
 //       .end((err, res) => {
 //         expect(res.body)
 //           .to.be.an('object')
-//           .and.to.have.property('holidayName', 'Updated');
+//           .and.to.have.property('auctionName', 'Updated');
 //         done();
 //       });
 //   });
@@ -316,7 +314,7 @@ describe('Auctions Controller Test', () => {
 // describe('DELETE /api/auctions/:id', () => {
 //   let hotelCreated = null;
 //   let userCreated = null;
-//   let holidayCreated = null;
+//   let auctionCreated = null;
 //   let token = null;
 //
 //   beforeEach(done => {
@@ -336,8 +334,8 @@ describe('Auctions Controller Test', () => {
 //
 //         return Auction.create(testAuction);
 //       })
-//       .then(holiday => {
-//         holidayCreated = holiday;
+//       .then(auction => {
+//         auctionCreated = auction;
 //
 //         api
 //           .post('/api/login')
@@ -356,32 +354,31 @@ describe('Auctions Controller Test', () => {
 //
 //   it('should return a 204 response', done => {
 //     api
-//       .delete(`/api/auctions/${holidayCreated.id}`)
+//       .delete(`/api/auctions/${auctionCreated.id}`)
 //       .set('Accept', 'application/json')
 //       .set('Authorization', `Bearer ${token}`)
 //       .expect(204, done);
 //   });
-// });
-// });
-
-
-// describe('Auctions Controller Test', () => {
-//   describe('GET /api/auctions', () => {
-//     it('should return a 200 response', function(done) {
-//       api
-//         .get('/api/auctions')
-//         .set('Accept', 'application/json')
-//         .expect(200, done);
-//     });
 //
-//     it('should return an array of auctions', function(done) {
-//       api
-//         .get('/api/auctions')
-//         .set('Accept', 'application/json')
-//         .end((err, res) => {
-//           expect(res.body).to.be.an('array');
-//           done();
-//         });
+//
+//   describe('Auctions Controller Test', () => {
+//     describe('GET /api/auctions', () => {
+//       it('should return a 200 response', function(done) {
+//         api
+//           .get('/api/auctions')
+//           .set('Accept', 'application/json')
+//           .expect(200, done);
+//       });
+//
+//       it('should return an array of auctions', function(done) {
+//         api
+//           .get('/api/auctions')
+//           .set('Accept', 'application/json')
+//           .end((err, res) => {
+//             expect(res.body).to.be.an('array');
+//             done();
+//           });
+//       });
 //     });
 //   });
 // });
